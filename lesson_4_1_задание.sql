@@ -18,7 +18,6 @@ CREATE TABLE users (
   created_at DATETIME DEFAULT NOW(),
   updated_at DATETIME DEFAULT NOW() ON UPDATE NOW()
 );
-
 --изменил названия столбцов таблице users
 
 --ALTER TABLE users RENAME COLUMN firstname TO first_name;
@@ -195,4 +194,4 @@ CREATE TABLE profiles (
 CREATE TABLE hometowns (
   id INT UNSIGNED NOT NULL PRIMARY KEY,
   name varchar(100 NOT NULL)
-);
+); 
