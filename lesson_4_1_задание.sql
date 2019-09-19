@@ -1,13 +1,13 @@
-Виктор приветствую!
+п»їР’РёРєС‚РѕСЂ РїСЂРёРІРµС‚СЃС‚РІСѓСЋ!
 
-1. Повторить все действия по корректировке БД, которые выполнялись на занятии.
-На ваше усмотрение, но рекомендуется - привести свои версии БД к общему виду, в соответствии с кодом в examples.sql по третьему и четвёртому урокам.
+1. РџРѕРІС‚РѕСЂРёС‚СЊ РІСЃРµ РґРµР№СЃС‚РІРёСЏ РїРѕ РєРѕСЂСЂРµРєС‚РёСЂРѕРІРєРµ Р‘Р”, РєРѕС‚РѕСЂС‹Рµ РІС‹РїРѕР»РЅСЏР»РёСЃСЊ РЅР° Р·Р°РЅСЏС‚РёРё.
+РќР° РІР°С€Рµ СѓСЃРјРѕС‚СЂРµРЅРёРµ, РЅРѕ СЂРµРєРѕРјРµРЅРґСѓРµС‚СЃСЏ - РїСЂРёРІРµСЃС‚Рё СЃРІРѕРё РІРµСЂСЃРёРё Р‘Р” Рє РѕР±С‰РµРјСѓ РІРёРґСѓ, РІ СЃРѕРѕС‚РІРµС‚СЃС‚РІРёРё СЃ РєРѕРґРѕРј РІ examples.sql РїРѕ С‚СЂРµС‚СЊРµРјСѓ Рё С‡РµС‚РІС‘СЂС‚РѕРјСѓ СѓСЂРѕРєР°Рј.
 
-Я сначала удалил все таблицы из базы
+РЇ СЃРЅР°С‡Р°Р»Р° СѓРґР°Р»РёР» РІСЃРµ С‚Р°Р±Р»РёС†С‹ РёР· Р±Р°Р·С‹
 
-Создал новые таблицы с учетом корректировок на уроке.
+РЎРѕР·РґР°Р» РЅРѕРІС‹Рµ С‚Р°Р±Р»РёС†С‹ СЃ СѓС‡РµС‚РѕРј РєРѕСЂСЂРµРєС‚РёСЂРѕРІРѕРє РЅР° СѓСЂРѕРєРµ.
 
---создал таблицу users
+--СЃРѕР·РґР°Р» С‚Р°Р±Р»РёС†Сѓ users
 
 CREATE TABLE users (
   id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,  
@@ -18,12 +18,12 @@ CREATE TABLE users (
   created_at DATETIME DEFAULT NOW(),
   updated_at DATETIME DEFAULT NOW() ON UPDATE NOW()
 );
---изменил названия столбцов таблице users
+--РёР·РјРµРЅРёР» РЅР°Р·РІР°РЅРёСЏ СЃС‚РѕР»Р±С†РѕРІ С‚Р°Р±Р»РёС†Рµ users
 
 --ALTER TABLE users RENAME COLUMN firstname TO first_name;
 --ALTER TABLE users RENAME COLUMN lastname TO last_name;
 
---создал таблицу профиля
+--СЃРѕР·РґР°Р» С‚Р°Р±Р»РёС†Сѓ РїСЂРѕС„РёР»СЏ
 
 CREATE TABLE profiles (
   user_id INT UNSIGNED NOT NULL PRIMARY KEY,
@@ -34,12 +34,12 @@ CREATE TABLE profiles (
   region_id INT unsigned DEFAULT NULL
 );
 
---добавил столбец регион в таблицу profiles
+--РґРѕР±Р°РІРёР» СЃС‚РѕР»Р±РµС† СЂРµРіРёРѕРЅ РІ С‚Р°Р±Р»РёС†Сѓ profiles
 
 --ALTER TABLE profiles ADD COLUMN region_id INT unsigned DEFAULT NULL;
 
 
---добавил таблицу регионов
+--РґРѕР±Р°РІРёР» С‚Р°Р±Р»РёС†Сѓ СЂРµРіРёРѕРЅРѕРІ
 
 CREATE TABLE regions (
   id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -51,7 +51,7 @@ CREATE TABLE regions (
   updated_at DATETIME DEFAULT NOW() ON UPDATE NOW()
 );
 
---добавил таблицу эмоджи
+--РґРѕР±Р°РІРёР» С‚Р°Р±Р»РёС†Сѓ СЌРјРѕРґР¶Рё
 
 CREATE TABLE emoji (
   id INT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -61,7 +61,7 @@ CREATE TABLE emoji (
   UNIQUE KEY name (name)
 );
 
---добавил таблицу постов
+--РґРѕР±Р°РІРёР» С‚Р°Р±Р»РёС†Сѓ РїРѕСЃС‚РѕРІ
 CREATE TABLE posts (
   id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY, 
   from_user_id INT UNSIGNED NOT NULL,
@@ -73,14 +73,14 @@ CREATE TABLE posts (
 );
 
 
---добавил таблицу групп
+--РґРѕР±Р°РІРёР» С‚Р°Р±Р»РёС†Сѓ РіСЂСѓРїРї
 CREATE TABLE communities (
   id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(150) NOT NULL UNIQUE
 );
 
 
---добавил таблицу связи пользователей и групп
+--РґРѕР±Р°РІРёР» С‚Р°Р±Р»РёС†Сѓ СЃРІСЏР·Рё РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№ Рё РіСЂСѓРїРї
 
 CREATE TABLE communities_users (
   community_id INT UNSIGNED NOT NULL,
@@ -89,11 +89,11 @@ CREATE TABLE communities_users (
   PRIMARY KEY (community_id, user_id)
 );
 
---добавил времемя вступления в группу
+--РґРѕР±Р°РІРёР» РІСЂРµРјРµРјСЏ РІСЃС‚СѓРїР»РµРЅРёСЏ РІ РіСЂСѓРїРїСѓ
 
 --ALTER TABLE communities_users ADD COLUMN created_at DATETIME DEFAULT CURRENT_TIMESTAMP;
 
---добавил таблицу медиафайлов
+--РґРѕР±Р°РІРёР» С‚Р°Р±Р»РёС†Сѓ РјРµРґРёР°С„Р°Р№Р»РѕРІ
 
 CREATE TABLE media (
   id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -106,14 +106,14 @@ CREATE TABLE media (
   updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
---добавил таблицу типов медиафайлов
+--РґРѕР±Р°РІРёР» С‚Р°Р±Р»РёС†Сѓ С‚РёРїРѕРІ РјРµРґРёР°С„Р°Р№Р»РѕРІ
 
 CREATE TABLE media_types (
   id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(255) NOT NULL UNIQUE
 );
 
---добавил таблицу лайков
+--РґРѕР±Р°РІРёР» С‚Р°Р±Р»РёС†Сѓ Р»Р°Р№РєРѕРІ
 CREATE TABLE likes (
   id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   user_id INT UNSIGNED NOT NULL,
@@ -122,7 +122,7 @@ CREATE TABLE likes (
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
---добавил таблицу типов лайков
+--РґРѕР±Р°РІРёР» С‚Р°Р±Р»РёС†Сѓ С‚РёРїРѕРІ Р»Р°Р№РєРѕРІ
 
 CREATE TABLE target_types (
   id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -130,7 +130,7 @@ CREATE TABLE target_types (
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
---добавил таблицу сообщений
+--РґРѕР±Р°РІРёР» С‚Р°Р±Р»РёС†Сѓ СЃРѕРѕР±С‰РµРЅРёР№
 
 CREATE TABLE messages (
   id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY, 
@@ -142,7 +142,7 @@ CREATE TABLE messages (
   created_at DATETIME DEFAULT NOW()
 );
 
---добавил таблицу дружбы
+--РґРѕР±Р°РІРёР» С‚Р°Р±Р»РёС†Сѓ РґСЂСѓР¶Р±С‹
 
 CREATE TABLE friendship (
   user_id INT UNSIGNED NOT NULL,
@@ -159,7 +159,7 @@ CREATE TABLE friendship_statuses (
 );
 
 
-Вот что получилось, все таблицы созданы, данные сгенерировал заново, дамп приложу.
+Р’РѕС‚ С‡С‚Рѕ РїРѕР»СѓС‡РёР»РѕСЃСЊ, РІСЃРµ С‚Р°Р±Р»РёС†С‹ СЃРѕР·РґР°РЅС‹, РґР°РЅРЅС‹Рµ СЃРіРµРЅРµСЂРёСЂРѕРІР°Р» Р·Р°РЅРѕРІРѕ, РґР°РјРї РїСЂРёР»РѕР¶Сѓ.
 
 mysql> show tables;
 +---------------------+
@@ -179,7 +179,7 @@ mysql> show tables;
 | users               |
 +---------------------+
 
-Добавил таблицу порфилей и городов
+Р”РѕР±Р°РІРёР» С‚Р°Р±Р»РёС†Сѓ РїРѕСЂС„РёР»РµР№ Рё РіРѕСЂРѕРґРѕРІ
 
 
 CREATE TABLE profiles (
