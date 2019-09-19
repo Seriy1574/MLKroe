@@ -180,3 +180,19 @@ mysql> show tables;
 | users               |
 +---------------------+
 
+Добавил таблицу порфилей и городов
+
+
+CREATE TABLE profiles (
+  user_id INT UNSIGNED NOT NULL PRIMARY KEY,
+  sex CHAR(1) NOT NULL,
+  birthday DATE,
+  hometown VARCHAR(100),
+  photo_id INT UNSIGNED NULL,
+  id_region INT UNSIGNED NULL
+);
+
+CREATE TABLE hometowns (
+  id INT UNSIGNED NOT NULL PRIMARY KEY,
+  name varchar(100 NOT NULL)
+);
