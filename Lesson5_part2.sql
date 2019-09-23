@@ -39,7 +39,7 @@ SELECT
  DAYNAME(DATE_FORMAT(u.birthday_at, '2019-%m-%d')) day_week,
  COUNT(u.name) count_users
 from users u
- GROUP BY DAYNAME(DATE_FORMAT(u.birthday_at, '2019-%m-%d'));
+ GROUP BY day_week;
 
 +-----------+-------------+
 | day_week  | count_users |
