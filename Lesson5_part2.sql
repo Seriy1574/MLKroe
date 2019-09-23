@@ -23,13 +23,14 @@ FROM users;
 +---------+
 
 
-SELECT FLOOR(AVG(TIMESTAMPDIFF(YEAR, birthday_at, NOW()))) AS age
+SELECT ROUND(AVG(TIMESTAMPDIFF(YEAR, birthday_at, NOW())),2) AS age
 FROM users;
-+------+
-| age  |
-+------+
-|   29 |
-+------+
+
++-------+
+| age   |
++-------+
+| 29.38 |
++-------+
 
 
 2. Подсчитайте количество дней рождения, которые приходятся на каждый из дней недели. Следует учесть, что необходимы дни недели текущего года, а не года рождения.
