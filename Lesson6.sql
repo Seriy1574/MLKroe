@@ -101,3 +101,27 @@ from
 3. Подсчитать общее количество лайков, которые получили 10 самых молодых пользователей
 
 SELECT * FROM profiles;
+
+SELECT user_id, (TIMESTAMPDIFF(YEAR, birthday  NOW())) AS age
+FROM profiles;
+DESCRIBE profiles;
+
+
++---------------------+
+| Tables_in_VK        |
++---------------------+
+| communities         |
+| communities_users   |
+| emoji               |
+| friendship          |
+| friendship_statuses |
+| hometowns           |
+| likes               |
+| media               |
+| media_types         |
+| messages            |
+| profiles            |
+| regions             |
+| target_types        |
+| users               |
++---------------------+
