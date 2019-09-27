@@ -221,3 +221,31 @@ ORDER BY  AVG_ACT
 Как-то все громоздко получается. В челом- все понятно
 
 про partition by кейс пока не придумал)))
+
+
+
+SELECT COUNT(id) AS All_likes
+FROM likes AS l
+WHERE l.user_id IN
+SELECT * FROM (SELECT user_id
+               FROM profiles
+               ORDER BY (TO_DAYS(NOW()) - TO_DAYS(birthday))/365.25
+               limit 10)t2);
+
+
+SELECT * FROM profiles AS p order by p.birthday DESC LIMIT 10;
+
+SELECT l.user_id, COUNT(id) FROM likes AS l
+WHERE l.user_id  IN (SELECT p.user_id FROM profiles AS p ORDER BY p.birthday DESC LIMIT 10)
+GROUP BY l.user_id;
+
+SELECT p.user_id, p.birthday FROM profiles AS p
+WHERE p.user_id IN(
+    SELECT l.user_id, COUNT(id) FROM likes AS l
+    GROUP BY l.user_id
+    )
+ORDER BY p.birthday DESC
+LIMIT 10;
+
+
+
