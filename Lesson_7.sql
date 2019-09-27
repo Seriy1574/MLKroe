@@ -2,19 +2,22 @@
 
 1. Составьте список пользователей users, которые осуществили хотя бы один заказ orders в интернет магазине
 
-Тут все просто. соединять можно в обе стороны
+Тут все просто. соединять можно в обе стороны, да и вариантов много
 
-SELECT DISTINCT u.id, u.name
+1.
+SELECT u.id, u.name
 FROM users AS u
     JOIN orders AS o
         ON u.id = o.user_id;
 
+2.
 SELECT  u.id, u.name
 FROM users AS u
 WHERE u.id in
       (SELECT o.user_id
       FROM orders AS o);
 
+3.
 SELECT u.id, u.name
 FROM users AS u
 WHERE EXISTS
@@ -22,11 +25,19 @@ WHERE EXISTS
     FROM orders AS o
     WHERE o.user_id = u.id);
 
+4.
 SELECT u.id, u.name
 FROM orders AS o
     JOIN users AS u
         ON u.id = o.user_id
 GROUP BY u.id, u.name;
+
+5.
+SELECT DISTINCT u.id, u.name
+FROM orders AS o
+         JOIN users AS u
+              ON u.id = o.user_id;
+
 
 Какой запрос оптимальней? Вероятно, что когда к users джойним с orders, т.к. не вся таблица orders просматирвается,
 а до первого найденного. или это не так?)
