@@ -6,37 +6,37 @@
 
 1.
 SELECT u.id, u.name
-FROM users AS u
-    JOIN orders AS o
-        ON u.id = o.user_id;
+  FROM users AS u
+  JOIN orders AS o
+    ON u.id = o.user_id;
 
 2.
-SELECT  u.id, u.name
-FROM users AS u
-WHERE u.id in
-      (SELECT o.user_id
-      FROM orders AS o);
+SELECT u.id, u.name
+  FROM users AS u
+ WHERE u.id in
+       (SELECT o.user_id
+          FROM orders AS o);
 
 3.
 SELECT u.id, u.name
-FROM users AS u
-WHERE EXISTS
-    (SELECT *
-    FROM orders AS o
-    WHERE o.user_id = u.id);
+  FROM users AS u
+ WHERE EXISTS
+       (SELECT *
+          FROM orders AS o
+         WHERE o.user_id = u.id);
 
 4.
 SELECT u.id, u.name
-FROM orders AS o
-    JOIN users AS u
-        ON u.id = o.user_id
-GROUP BY u.id, u.name;
+  FROM orders AS o
+       JOIN users AS u
+       ON u.id = o.user_id
+ GROUP BY u.id, u.name;
 
 5.
 SELECT DISTINCT u.id, u.name
-FROM orders AS o
-         JOIN users AS u
-              ON u.id = o.user_id;
+  FROM orders AS o
+       JOIN users AS u
+       ON u.id = o.user_id;
 
 
 Какой запрос оптимальней? Вероятно, что когда к users джойним с orders, т.к. не вся таблица orders просматирвается,
@@ -48,10 +48,11 @@ FROM orders AS o
 
 Тут тоже возможны вариации, как и в первом задании,
 
-SELECT DISTINCT p.id, p.name, p.description, c.name AS type_product
-FROM products AS p
-    LEFT JOIN catalogs AS c
-        ON p.catalog_id = c.id;
+SELECT DISTINCT
+       p.id, p.name, p.description, c.name AS type_product
+  FROM products AS p
+       LEFT JOIN catalogs AS c
+       ON p.catalog_id = c.id;
 
 Тут применил LEFT JOIN, потому что в таблице products, возможно пустое значение p.catalog_id. чтоб его отловить. вот типа этого
 +----+-------------------------+------------------------------------------------------------------------------------+--------------------+
@@ -75,8 +76,8 @@ FROM products AS p
 
 
 SELECT f.id, c1.name AS 'from', c2.name AS 'to'
-FROM flights AS f
-    JOIN cities AS c1
-        ON f.from = c1.label
-    JOIN cities AS c2
-        ON f.to = c2.label;
+  FROM flights AS f
+       JOIN cities AS c1
+       ON f.from = c1.label
+            JOIN cities AS c2
+            ON f.to = c2.label;
