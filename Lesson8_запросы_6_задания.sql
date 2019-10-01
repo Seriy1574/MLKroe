@@ -5,7 +5,7 @@
 
 =========================================================================================================================
 
-2. Пусть задан некоторый пользователь.
+Пусть задан некоторый пользователь.
 Из всех друзей этого пользователя найдите человека, который больше всех общался с нашим
 пользоваетелем.
 
@@ -80,7 +80,7 @@ LIMIT 1) AS t1;
 
 
 
-Виктов, вопрос? что делать в нашем случае если наш пользователь получить от других одинаковое кол-во сообщений?=)
+Виктор, вопрос? что делать в нашем случае если наш пользователь получить от других одинаковое кол-во сообщений?=)
 Видимо выведет того кто первый попадется?
 
 
@@ -138,18 +138,19 @@ SELECT p.sex AS SEX, COUNT(l.id) AS all_likes
 5. Найти 10 пользователей, которые проявляют наименьшую активность в использовании социальной
 сети
 
-В шестом уроке сделал
+В шестом уроке сделал.
+
 
 SELECT
     CONCAT(first_name,' ',last_name) AS user_name
-     ,(l.all_likes/TIMESTAMPDIFF(MONTH , created_at , NOW())) AS 'like/month'
-     ,(m.all_message/TIMESTAMPDIFF(MONTH , created_at , NOW()) ) AS 'messages/month'
-     ,(m2.all_media/TIMESTAMPDIFF(MONTH , created_at , NOW()))  AS 'media/month'
-     ,(com.all_comm/TIMESTAMPDIFF(MONTH , created_at , NOW())) AS 'comment/month'
-     ,((l.all_likes/TIMESTAMPDIFF(MONTH , created_at , NOW()))+
-       (m.all_message/TIMESTAMPDIFF(MONTH , created_at , NOW()))+
-       (m2.all_media/TIMESTAMPDIFF(MONTH , created_at , NOW()))+
-       (com.all_comm/TIMESTAMPDIFF(MONTH , created_at , NOW()))) /4 AS AVG_ACT
+     ,if(l.all_likes IS NULL, 0, l.all_likes/TIMESTAMPDIFF(MONTH , created_at , NOW())) AS 'like/month'
+     ,if(m.all_message IS NULL, 0, m.all_message/TIMESTAMPDIFF(MONTH , created_at , NOW()) ) AS 'messages/month'
+     ,if(m2.all_media IS NULL, 0,m2.all_media/TIMESTAMPDIFF(MONTH , created_at , NOW()))  AS 'media/month'
+     ,if(com.all_comm IS NULL, 0, com.all_comm/TIMESTAMPDIFF(MONTH , created_at , NOW())) AS 'comment/month'
+     ,(if(l.all_likes IS NULL, 0, l.all_likes/TIMESTAMPDIFF(MONTH , created_at , NOW()))+
+       if(m.all_message IS NULL, 0, m.all_message/TIMESTAMPDIFF(MONTH , created_at , NOW()))+
+       if(m2.all_media IS NULL, 0,m2.all_media/TIMESTAMPDIFF(MONTH , created_at , NOW()))+
+       if(com.all_comm IS NULL, 0, com.all_comm/TIMESTAMPDIFF(MONTH , created_at , NOW()))) /4 AS AVG_ACT
 from users AS u
          LEFT JOIN
      (SELECT user_id, COUNT(target_id)  AS all_likes
