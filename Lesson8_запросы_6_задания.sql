@@ -138,30 +138,44 @@ SELECT p.sex AS SEX, COUNT(l.id) AS all_likes
 5. Найти 10 пользователей, которые проявляют наименьшую активность в использовании социальной
 сети
 
+В шестом уроке сделал
 
+SELECT
+    CONCAT(first_name,' ',last_name) AS user_name
+     ,(l.all_likes/TIMESTAMPDIFF(MONTH , created_at , NOW())) AS 'like/month'
+     ,(m.all_message/TIMESTAMPDIFF(MONTH , created_at , NOW()) ) AS 'messages/month'
+     ,(m2.all_media/TIMESTAMPDIFF(MONTH , created_at , NOW()))  AS 'media/month'
+     ,(com.all_comm/TIMESTAMPDIFF(MONTH , created_at , NOW())) AS 'comment/month'
+     ,((l.all_likes/TIMESTAMPDIFF(MONTH , created_at , NOW()))+
+       (m.all_message/TIMESTAMPDIFF(MONTH , created_at , NOW()))+
+       (m2.all_media/TIMESTAMPDIFF(MONTH , created_at , NOW()))+
+       (com.all_comm/TIMESTAMPDIFF(MONTH , created_at , NOW()))) /4 AS AVG_ACT
+from users AS u
+         LEFT JOIN
+     (SELECT user_id, COUNT(target_id)  AS all_likes
+      FROM likes
+      GROUP BY user_id
+     ) AS l
+     on u.id = l.user_id
+         LEFT JOIN
+     (SELECT from_user_id, COUNT(id) AS all_message
+      FROM messages
+      GROUP BY  from_user_id
+     ) AS m
+     on u.id = m.from_user_id
+         LEFT JOIN
+     (SELECT user_id, COUNT(id) all_media
+      FROM media
+      GROUP BY user_id
+     ) AS m2
+     on u.id = m2.user_id
+         LEFT JOIN
+     (SELECT user_id, COUNT(user_id) AS all_comm
+      FROM communities_users
+      GROUP BY user_id) as com
+     on u.id = com.user_id
 
-не еще переписал- но это жесть)
+ORDER BY  AVG_ACT
+limit 10;
 
-
-SELECT CONCAT(t1.first_name,' ',t1.last_name) AS user_name
-       , t1.`like/month`, t1.`messages/month`, t1.`media/month`, t1.`comment/month`
-       , (t1.`like/month` + t1.`messages/month` + t1.`media/month` + t1.`comment/month`)/4 AS AVG_ACT
-  FROM
-       (SELECT u.id, u.first_name, u.last_name
-               , COUNT(l.id)/TIMESTAMPDIFF(MONTH , u.created_at , NOW()) AS 'like/month'
-               , COUNT(m.id)/TIMESTAMPDIFF(MONTH , u.created_at , NOW()) AS 'messages/month'
-               , COUNT(me.id)/TIMESTAMPDIFF(MONTH , u.created_at , NOW()) AS 'media/month'
-               , COUNT(c.user_id)/TIMESTAMPDIFF(MONTH , u.created_at , NOW()) AS 'comment/month'
-         FROM users u
-              LEFT JOIN likes l
-              ON u.id = l.user_id
-                   LEFT JOIN messages m
-                   ON u.id = m.from_user_id
-                        LEFT JOIN media me
-                        ON u.id = me.user_id
-                             LEFT JOIN communities_users c
-                             ON u.id = c.user_id
-        GROUP BY u.id) AS t1
-        ORDER BY  AVG_ACT
-        LIMIT 10;
 
