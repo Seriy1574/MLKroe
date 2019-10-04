@@ -13,27 +13,27 @@
 
 
 SELECT CONCAT
-    ('Пользователь '
-    ,u1.first_name
-    ,' '
-    ,u1.last_name
-    ,' получил '
-    ,t1.all_mess
-    ,' сообщ. от пользователя '
-    ,u2.first_name
-    ,' '
-    ,u2.last_name) AS text_mess
-  FROM
-       (SELECT m.to_user_id, m.from_user_id, count(m.id) all_mess
-          FROM messages m
-         WHERE m.to_user_id = 648
-         GROUP BY m.to_user_id, m.from_user_id
-         ORDER BY all_mess DESC
-         LIMIT 1) t1
-               JOIN users u1
-               ON u1.id = t1.to_user_id
-               JOIN users u2
-               ON u2.id = t1.from_user_id;
+           ('Пользователь '
+           ,u1.first_name
+           ,' '
+           ,u1.last_name
+           ,' получил '
+           ,t1.all_mess
+           ,' сообщ. от пользователя '
+           ,u2.first_name
+           ,' '
+           ,u2.last_name) AS text_mess
+FROM
+    (SELECT m.to_user_id, m.from_user_id, count(m.id) all_mess
+     FROM messages m
+     WHERE m.to_user_id = 648
+     GROUP BY m.to_user_id, m.from_user_id
+     ORDER BY all_mess DESC
+     LIMIT 1) t1
+        JOIN users u1
+             ON u1.id = t1.to_user_id
+        JOIN users u2
+             ON u2.id = t1.from_user_id;
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
