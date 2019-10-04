@@ -5,83 +5,46 @@
 
 =========================================================================================================================
 
-Пусть задан некоторый пользователь.
+2. Пусть задан некоторый пользователь.
 Из всех друзей этого пользователя найдите человека, который больше всех общался с нашим
 пользоваетелем.
 
 Пользователь id = 648
 
 
-SELECT CONCAT
-           ('Пользователь '
-           ,u1.first_name
-           ,' '
-           ,u1.last_name
-           ,' получил '
-           ,t1.all_mess
-           ,' сообщ. от пользователя '
-           ,u2.first_name
-           ,' '
-           ,u2.last_name) AS text_mess
+SELECT CONCAT(u2.first_name, ' ',u2.last_name, ' ','send ', t2.all_mess,  ' message/es', ' ' ,u1.first_name, ' ',u1.last_name, '!') AS text
 FROM
-    (SELECT m.to_user_id, m.from_user_id, count(m.id) all_mess
-     FROM messages m
-     WHERE m.to_user_id = 648
-     GROUP BY m.to_user_id, m.from_user_id
+    (SELECT t.id, t.id_fr, COUNT(*) AS all_mess
+     FROM
+         (SELECT f.user_id AS id, f.friend_id AS id_fr
+          FROM friendship AS f
+          WHERE f.user_id = 648
+            AND f.status_id = 1
+
+          UNION
+
+          SELECT f2.friend_id AS id, f2.user_id AS id_fr
+          FROM friendship AS f2
+          WHERE f2.friend_id = 648
+            AND f2.status_id = 1) AS t
+             JOIN messages AS m
+                  ON m.from_user_id = t.id_fr
+                      AND m.to_user_id = t.id
+
+     GROUP BY t.id, t.id_fr
      ORDER BY all_mess DESC
-     LIMIT 1) t1
-        JOIN users u1
-             ON u1.id = t1.to_user_id
-        JOIN users u2
-             ON u2.id = t1.from_user_id;
+     LIMIT 1) t2
+        JOIN users AS u1
+             ON u1.id = t2.id
+        JOIN users AS u2
+             ON u2.id = t2.id_fr;
 
++---------------------------------------------------------+
+| text                                                    |
++---------------------------------------------------------+
+| Winfield Rau send 3 message/es Christelle Pfannerstill! |
++---------------------------------------------------------+
 
-+--------------------------------------------------------------------------------------------------------------------------+
-| text_mess                                                                                                                |
-+--------------------------------------------------------------------------------------------------------------------------+
-| Пользователь Christelle Pfannerstill получил 3 сообщ. от пользователя Winfield Rau                                       |
-+--------------------------------------------------------------------------------------------------------------------------+
-
-
-Пользователь id = 3
-
-SELECT CONCAT
-    ('Пользователь '
-    ,t1.first_name_to
-    ,' '
-    ,t1.last_name_to
-    ,' получил '
-    ,t1.all_mess
-    ,' сообщ. от пользователя '
-    ,t1.first_name_from
-    ,' '
-    ,t1.last_name_from) AS text_mess
-FROM (SELECT u1.first_name AS first_name_to,
-             u1.last_name AS last_name_to,
-             u2.first_name AS first_name_from,
-             u2.last_name AS last_name_from,
-             COUNT(m.id) AS all_mess
-  FROM messages m
-       JOIN users u1
-       ON u1.id = m.to_user_id
-       AND m.to_user_id = 3
-       JOIN users u2
-       ON u2.id = m.from_user_id
-GROUP BY m.to_user_id, m.from_user_id
-ORDER BY all_mess DESC
-LIMIT 1) AS t1;
-
-
-+------------------------------------------------------------------------------------------------------------------+
-| text_mess                                                                                                        |
-+------------------------------------------------------------------------------------------------------------------+
-| Пользователь Charlene Turner получил 2 сообщ. от пользователя Garnett Kuhn                                       |
-+------------------------------------------------------------------------------------------------------------------+
-
-
-
-Виктор, вопрос? что делать в нашем случае если наш пользователь получить от других одинаковое кол-во сообщений?=)
-Видимо выведет того кто первый попадется?
 
 
 ========================================================================================================================
@@ -179,80 +142,3 @@ from users AS u
 ORDER BY  AVG_ACT
 limit 10;
 
-
-2. Пусть задан некоторый пользователь.
-Из всех друзей этого пользователя найдите человека, который больше всех общался с нашим
-пользоваетелем.
-
-ПОльзователь id = 648
-
---Подсчет кто больше писал пользователю
-
-SELECT m.to_user_id, m.from_user_id, count(m.id) all_messages
-FROM messages m
-where m.to_user_id = 648 and m.from_user_id in
-                             (SELECT friend_id
-                              FROM friendship
-                              WHERE status_id in
-                                    (SELECT id
-                                     FROM friendship_statuses
-                                     WHERE id = 1) )
-GROUP BY m.to_user_id, m.from_user_id
-ORDER BY all_messages DESC
-LIMIT 1;
-+------------+--------------+--------------+
-| to_user_id | from_user_id | all_messages |
-+------------+--------------+--------------+
-|        648 |          335 |            3 |
-+------------+--------------+--------------+
-
-а тут жесть у меня)))))))))))))))))
-
-
-SELECT CONCAT(
-               (SELECT CONCAT('Пользователь ',first_name, ' ',last_name, ' получил от пользователя ')
-                  from users u where id =
-                       (SELECT t1.to_user_id
-                          from (SELECT m.to_user_id, m.from_user_id, count(m.id) all_messages
-                                  FROM messages m
-                                 where m.to_user_id = 648 and m.from_user_id in
-                                       (SELECT friend_id
-                                         FROM friendship
-                                        WHERE status_id in
-                                              (SELECT id
-                                                 FROM friendship_statuses
-                                                WHERE id = 1) )
-                                                GROUP BY m.to_user_id, m.from_user_id
-                                                ORDER BY all_messages DESC
-                                                LIMIT 1) t1)),
-    (SELECT CONCAT(first_name, ' ',
-                              last_name, ' ')
-                from users u where id =
-                                   (SELECT t2.from_user_id from (SELECT m.to_user_id, m.from_user_id, count(m.id) all_messages
-                                                                 FROM messages m
-                                                                 where m.to_user_id = 648 and m.from_user_id in
-                                                                                              (SELECT friend_id
-                                                                                               FROM friendship
-                                                                                               WHERE status_id in
-                                                                                                     (SELECT id
-                                                                                                      FROM friendship_statuses
-                                                                                                      WHERE id = 1) )
-                                                                 GROUP BY m.to_user_id, m.from_user_id
-                                                                 ORDER BY all_messages DESC
-                                                                 LIMIT 1) t2)),
-
-               (SELECT count(m.id) all_messages
-                FROM messages m
-                where m.to_user_id = 648 and m.from_user_id in
-                                             (SELECT friend_id
-                                              FROM friendship
-                                              WHERE status_id in
-                                                    (SELECT id
-                                                     FROM friendship_statuses
-                                                     WHERE id = 1) )
-                GROUP BY m.to_user_id, m.from_user_id
-                ORDER BY all_messages DESC
-                LIMIT 1),
-               ' сообщ.'
-
-           );
