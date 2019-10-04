@@ -30,4 +30,40 @@ SELECT CONCAT(u2.first_name, ' ',u2.last_name, ' ','send ', t2.all_mess,  ' mess
                      ON u1.id = t2.id
                    JOIN users AS u2
                      ON u2.id = t2.id_fr;
++---------------------------------------------------------+
+| text                                                    |
++---------------------------------------------------------+
+| Winfield Rau send 3 message/es Christelle Pfannerstill! |
++---------------------------------------------------------+
+
+
+3. Подсчитать общее количество лайков, которые получили 10 самых молодых пользователей
+
+Два решения, с сотрировку возраста добавил сотритовку по user_id, чтоб данные в подзапросах получались одинаковые
+а то у меня много "ровестников")) получилось и каждый раз при запуске запроса, разное кол-во лайков получается
+
+
+1.
+SELECT COUNT(l.id) AS all_likes
+  FROM likes AS l
+       JOIN
+           (SELECT *
+              FROM profiles AS p
+             ORDER BY p.birthday DESC, p.user_id
+             LIMIT 10) as t1
+         ON l.target_id = t1.user_id
+        AND l.target_type_id = 1;
+
+
+2.
+SELECT SUM(t.liles) AS all_likes
+  FROM
+    (SELECT p.user_id, p.birthday, COUNT(l.id) AS liles
+       FROM likes AS l
+            JOIN profiles AS p
+              ON l.target_id = p.user_id
+             AND l.target_type_id = 1
+      GROUP BY p.user_id, p.birthday
+      ORDER BY p.birthday DESC,  p.user_id
+      LIMIT 10) AS t;
 
