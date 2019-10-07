@@ -3,8 +3,8 @@
 1. В базе данных shop и sample присутствуют одни и те же таблицы, учебной базы данных.
  Переместите запись id = 1 из таблицы shop.users в таблицу sample.users. Используйте транзакции.
 
-SELECT * FROM lesson5_1.users WHERE id = 1;
-
+У меня перенос из таблицы lesson5_1.users в таблицу sample_2.users
+Вопрос : не понимаю что происходит когда в таблице lesson5_1.users нет записи с id = 1.
 
 START TRANSACTION;
 SELECT * FROM lesson5_1.users WHERE id = 1;
@@ -25,7 +25,7 @@ AS
       FROM products AS p
            LEFT JOIN catalogs AS c
                   ON p.catalog_id = c.id;
-
+commit;
 
 +-------------------------+-----------------------------------+
 | pruduct                 | type                              |
