@@ -1,5 +1,9 @@
 ﻿Практическое задание по теме “Транзакции, переменные, представления”
 
+Виктор, приветствую!!
+
+дополнительныйе задания в этом уроке не делал. нет времени, сделаю потом
+
 1. В базе данных shop и sample присутствуют одни и те же таблицы, учебной базы данных.
  Переместите запись id = 1 из таблицы shop.users в таблицу sample.users. Используйте транзакции.
 
@@ -60,7 +64,9 @@ commit;
 --С 6:00 до 12:00 функция должна возвращать фразу "Доброе утро", с 12:00 до 18:00 функция должна возвращать фразу "Добрый день",
 --с 18:00 до 00:00 — "Добрый вечер", с 00:00 до 6:00 — "Доброй ночи
 
+не знаю на сколько верно сделал, но вроде работает, прибавил три часа, чтоб время МСК учитывал
 
+время 00:00:00 получается меньше всех, переделал на 23:59:59
 
 DROP FUNCTION if exists hello;
 DELIMITER //
@@ -68,22 +74,62 @@ CREATE FUNCTION hello()
     RETURNS VARCHAR(100) DETERMINISTIC
 BEGIN
     DECLARE hi_men VARCHAR(100);
-        SET hi_men =
+    SET hi_men =
             (SELECT
-             IF ((CURTIME() + INTERVAL 3 HOUR > '06:00:00' and  CURTIME() + INTERVAL 3 HOUR <= '12:00:00'),"Доброе утро!",
-             IF ((CURTIME() + INTERVAL 3 HOUR > '12:00:00' and  CURTIME() + INTERVAL 3 HOUR <= '18:00:00'),"Добрый день!",
-             IF ((CURTIME() + INTERVAL 3 HOUR > '18:00:00' and  CURTIME() + INTERVAL 3 HOUR <= '00:00:00'),"Добрый вечер!","Доброй ночи"))));
+                 IF (((CURTIME() + INTERVAL 3 HOUR > '06:00:00') and  (CURTIME() + INTERVAL 3 HOUR <= '12:00:00')),"Доброе утро!",
+                     IF (((CURTIME() + INTERVAL 3 HOUR > '12:00:00') and  (CURTIME() + INTERVAL 3 HOUR <= '18:00:00')),"Добрый день!",
+                         IF (((CURTIME() + INTERVAL 3 HOUR > '18:00:00') and  (CURTIME() + INTERVAL 3 HOUR <= '23:59:59')),"Добрый вечер!","Доброй ночи"))));
     RETURN hi_men;
-  END //
+END //
 DELIMITER ;
 
+SELECT hello();
 ========================================================================================================================
 
 2. В таблице products есть два текстовых поля: name с названием товара и description с его описанием.
 Допустимо присутствие обоих полей или одно из них. Ситуация, когда оба поля принимают неопределенное значение NULL неприемлема.
 Используя триггеры, добейтесь того, чтобы одно из этих полей или оба поля были заполнены.
-При попытке присвоить полям NULL-значение необходимо отменить операцию.
+При попытке присвоить полям NULL-значение необходимо отменить операцию
 
+
+Плохо понимаю триггеры, но думаю,что со временем разберусь.
+
+---на вставку
+DROP TRIGGER IF EXISTS check_null;
+DELIMITER //
+CREATE TRIGGER check_null BEFORE INSERT ON products
+    FOR EACH ROW
+BEGIN
+    IF (new.name IS NULL and new.description IS NULL) THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Вставили два пустых значения, вставка отмененна"!!';
+    END IF ;
+END;//
+DELIMITER ;
+--на изменение полей
+DROP TRIGGER IF EXISTS change_null;
+DELIMITER //
+CREATE TRIGGER change_null BEFORE UPDATE ON products
+    FOR EACH ROW
+BEGIN
+    IF (new.name IS NULL and new.description IS NULL) THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Вставили два пустых значения, вставка отмененна"!!';
+    END IF ;
+END;//
+DELIMITER ;
+
+
+Не смог написать триггер, который проверяет уже умеющиеся пустые записи в таблице
+
+--тут немного попроверял
+
+
+INSERT INTO products (id, name, description, price, catalog_id, created_at, updated_at)
+VALUE (DEFAULT, DEFAULT, 'ТЕСТ ВВОДА4', DEFAULT, 1, DEFAULT, DEFAULT),
+(DEFAULT,'ТЕСТ ввода4', DEFAULT, DEFAULT, 2, DEFAULT, DEFAULT),
+(DEFAULT,DEFAULT, DEFAULT, DEFAULT, 2, DEFAULT, DEFAULT),
+(DEFAULT,'ТЕСТ ввода 4', 'тесто воода 4', DEFAULT, 2, DEFAULT, DEFAULT);
+
+UPDATE products SET description = NULL, name = NULL WHERE id = 3;
 
 
 ========================================================================================================================
