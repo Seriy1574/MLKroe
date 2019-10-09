@@ -18,7 +18,7 @@ INSERT INTO sample_2.users (id, name, birthday_at, created_at, updated_at)
         WHERE id = 1;
 DELETE FROM lesson5_1.users
 WHERE id = 1;
-
+COMMIT;
 ========================================================================================================================
 
 2. Создайте представление, которое выводит название name товарной позиции из таблицы products и соответствующее название каталога name из таблицы catalogs
