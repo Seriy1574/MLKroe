@@ -29,7 +29,7 @@ ALTER TABLE profiles_employeers ADD COLUMN group_id INT UNSIGNED NOT NULL;
 
 CREATE TABLE employees
 (
-    id           INT UNSIGNED NOT NULL,
+    id           BIGINT UNSIGNED NOT NULL,
     ds           DATETIME NOT NULL ,
     df           DATETIME DEFAULT NULL,
     id_group     INT UNSIGNED NOT NULL,
@@ -37,12 +37,14 @@ CREATE TABLE employees
 
 );
 
+ALTER TABLE employees MODIFY COLUMN id BIGINT UNSIGNED NOT NULL ;
+
 --таблица групп пользователей. подразделение где работает сотрудник
 тут записи можно добавлять и удалять при открытии или закрытии нового подразделения
 
 CREATE TABLE groups_employees
 (
-    id        SERIAL,
+    id        INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     ds        DATETIME NOT NULL ,
     df        DATETIME DEFAULT NULL,
     id_parent INT UNSIGNED NOT NULL
@@ -52,7 +54,7 @@ CREATE TABLE groups_employees
 
 CREATE TABLE positions
 (
-    id  SERIAL,
+   id   INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
    name VARCHAR(30) not null
 );
 
@@ -60,7 +62,7 @@ CREATE TABLE positions
 
 CREATE TABLE regions
 (
-    id        SERIAL,
+    id        INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name      VARCHAR(50),
     id_parent INT UNSIGNED default NULL
 );
@@ -70,13 +72,15 @@ CREATE TABLE regions
 CREATE TABLE actions_employees
 (
     id               SERIAL,
-    id_client        INT UNSIGNED NOT NULL,
-    id_employee      INT UNSIGNED NOT NULL,
+    id_client        BIGINT UNSIGNED NOT NULL,
+    id_employee      BIGINT UNSIGNED NOT NULL,
     id_type_action   INT UNSIGNED NOT NULL,
     id_result_action INT UNSIGNED NOT NULL,
     date_action      DATETIME DEFAULT CURRENT_TIMESTAMP,
     id_promise       INT UNSIGNED NOT NULL
 );
+
+ALTER TABLE actions_employees MODIFY COLUMN id_client BIGINT UNSIGNED NOT NULL ;
 
 --таблица типа контакта(на какой номер звонил или на какой адрес выезжал)
 
@@ -126,7 +130,7 @@ CREATE TABLE clients
 CREATE TABLE phones_clients
 (
     id        SERIAL,
-    id_client INT UNSIGNED NOT NULL,
+    id_client BIGINT UNSIGNED NOT NULL,
     number    VARCHAR(50),
     actual    BOOLEAN      NOT NULL
 );
@@ -136,16 +140,16 @@ ALTER TABLE phones_clients ADD COLUMN id_type_phone INT UNSIGNED NOT NULL;
 
 CREATE TABLE types_phones
 (
-    id   SERIAL,
+    id   INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(20) NOT NULL
 );
 
 --таблица адресов клиента
-
+ALTER TABLE addresses_clients MODIFY COLUMN id_client BIGINT UNSIGNED;
 CREATE TABLE addresses_clients
 (
     id        SERIAL,
-    id_client INT UNSIGNED NOT NULL,
+    id_client BIGINT,
     country   VARCHAR(30),
     region    VARCHAR(120),
     city      VARCHAR(120),
@@ -157,10 +161,10 @@ CREATE TABLE addresses_clients
 );
 
 ---тип адреса
-
+ALTER TABLE types_adresses MODIFY COLUMN id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY;
 CREATE TABLE types_adresses
 (
-    id   SERIAL,
+    id   INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(20) NOT NULL
 );
 
@@ -170,20 +174,21 @@ CREATE TABLE accounts
 (
     id              SERIAL,
     number_count    VARCHAR(50),
-    id_client       INT UNSIGNED NOT NULL,
+    id_client       BIGINT UNSIGNED NOT NULL,
     id_type_product INT UNSIGNED NOT NULL,
     sum_credit      FLOAT NOT NULL,
     date_credit     DATETIME NOT NULL,
     credit_term     INT UNSIGNED NOT NULL,
     dpd             INT UNSIGNED NOT NULL
 );
+ALTER TABLE accounts MODIFY COLUMN id_client BIGINT UNSIGNED NOT NULL;
+ALTER TABLE accounts ADD COLUMN id_type INT UNSIGNED NOT NULL;
 
-ALTER TABLE accounts ADD COLUMN id_bank INT UNSIGNED NOT NULL;
 
 --таблица банков
 CREATE TABLE banks
 (
-    id   SERIAL,
+    id   INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(20) NOT NULL
 );
 
@@ -191,7 +196,7 @@ CREATE TABLE banks
 
 CREATE TABLE types_products
 (
-    id   SERIAL,
+    id   INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(20) NOT NULL
 );
 
@@ -200,16 +205,24 @@ CREATE TABLE types_products
 CREATE TABLE payments
 (
     id SERIAL,
-    id_account INT UNSIGNED NOT NULL,
+    id_account BIGINT UNSIGNED NOT NULL ,
     sum_payment FLOAT NOT NULL
 );
-
+ALTER TABLE payments MODIFY COLUMN id_account BIGINT UNSIGNED NOT NULL;
 
 --таблица обещаний оплатить
 CREATE TABLE promises
 (
     id           SERIAL,
-    account_id   INT UNSIGNED NOT NULL,
+    account_id   BIGINT UNSIGNED NOT NULL,
     date_promise DATETIME DEFAULT CURRENT_TIMESTAMP,
     date_payment DATETIME NOT NULL
 );
+
+ALTER TABLE promises ADD COLUMN id_employee BIGINT UNSIGNED NOT NULL;
+
+
+ALTER TABLE promises MODIFY COLUMN id_ BIGINT UNSIGNED NOT NULL;
+
+
+ALTER TABLE promises CHANGE account_id id_account BIGINT UNSIGNED;
