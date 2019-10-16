@@ -130,3 +130,86 @@ CREATE TABLE phones_clients
     number    VARCHAR(50),
     actual    BOOLEAN      NOT NULL
 );
+ALTER TABLE phones_clients ADD COLUMN id_type_phone INT UNSIGNED NOT NULL;
+
+--таблица типов телефонов
+
+CREATE TABLE types_phones
+(
+    id   SERIAL,
+    name VARCHAR(20) NOT NULL
+);
+
+--таблица адресов клиента
+
+CREATE TABLE addresses_clients
+(
+    id        SERIAL,
+    id_client INT UNSIGNED NOT NULL,
+    country   VARCHAR(30),
+    region    VARCHAR(120),
+    city      VARCHAR(120),
+    street    VARCHAR(120),
+    house     VARCHAR(10),
+    flat      VARCHAR(10),
+    id_type   INT UNSIGNED NOT NULL,
+    actual    BOOLEAN
+);
+
+---тип адреса
+
+CREATE TABLE types_adresses
+(
+    id   SERIAL,
+    name VARCHAR(20) NOT NULL
+);
+
+----таблица кредитов
+
+CREATE TABLE accounts
+(
+    id              SERIAL,
+    number_count    VARCHAR(50),
+    id_client       INT UNSIGNED NOT NULL,
+    id_type_product INT UNSIGNED NOT NULL,
+    sum_credit      FLOAT NOT NULL,
+    date_credit     DATETIME NOT NULL,
+    credit_term     INT UNSIGNED NOT NULL,
+    dpd             INT UNSIGNED NOT NULL
+);
+
+ALTER TABLE accounts ADD COLUMN id_bank INT UNSIGNED NOT NULL;
+
+--таблица банков
+CREATE TABLE banks
+(
+    id   SERIAL,
+    name VARCHAR(20) NOT NULL
+);
+
+--таблица типов кредитов
+
+CREATE TABLE types_products
+(
+    id   SERIAL,
+    name VARCHAR(20) NOT NULL
+);
+
+---таблица платежей
+
+CREATE TABLE payments
+(
+    id SERIAL,
+    id_account INT UNSIGNED NOT NULL,
+    sum_payment FLOAT NOT NULL
+);
+
+
+--таблица обещаний оплатить
+CREATE TABLE promises
+(
+    id           SERIAL,
+    account_id   INT UNSIGNED NOT NULL,
+    date_promise DATETIME DEFAULT CURRENT_TIMESTAMP,
+    date_payment DATETIME NOT NULL
+);
