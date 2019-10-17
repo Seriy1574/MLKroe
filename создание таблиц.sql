@@ -38,14 +38,14 @@ CREATE TABLE employees
 -------------------------------------------------------------------------------------------------------------------------
 --таблица групп пользователей. подразделение где работает сотрудник
 тут записи можно добавлять и удалять при открытии или закрытии нового подразделения
-
-CREATE TABLE groups_employees
+Удалил за ненадобностью
+/*CREATE TABLE groups_employees
 (
     id        INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     ds        DATETIME NOT NULL ,
     df        DATETIME DEFAULT NULL,
     id_parent INT UNSIGNED NOT NULL
-);
+);*/
 
 ------------------------------------------------------------------------------------------------------------------------
 --таблица позиций, позиции на которых сотрудник работает(специалист, старший специалист и.т.) тут записи можно добавлять и редактировать
@@ -78,7 +78,7 @@ CREATE TABLE actions_employees
     id_result_action INT UNSIGNED NOT NULL,
     date_action      DATETIME DEFAULT CURRENT_TIMESTAMP,
     id_promise       BIGINT UNSIGNED NOT NULL,
-    id_contact INT UNSIGNED NOT NULL
+    id_contact       INT UNSIGNED NOT NULL
 );
 
 ------------------------------------------------------------------------------------------------------------------------
@@ -128,6 +128,18 @@ CREATE TABLE clients
     patronymic       VARCHAR(20) NOT NULL,
     passport         VARCHAR(20) NOT NULL
 );
+
+ALTER TABLE clients ADD COLUMN id_type_client INT UNSIGNED NOT NULL ;
+
+CREATE TABLE types_clients
+(
+    id               INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name             VARCHAR(20)
+);
+
+
+
+
 ------------------------------------------------------------------------------------------------------------------------
 --таблица телефонов клиентов
 
@@ -213,9 +225,9 @@ CREATE TABLE types_products
 
 CREATE TABLE payments
 (
-    id SERIAL,
-    id_account BIGINT UNSIGNED NOT NULL ,
-    sum_payment FLOAT NOT NULL,
+    id           SERIAL,
+    id_account   BIGINT UNSIGNED NOT NULL ,
+    sum_payment  FLOAT NOT NULL,
     date_payment DATETIME NOT NULL
 
 );
@@ -236,14 +248,16 @@ CREATE TABLE promises
 
 
 ------------------------------------------------------------------------------------------------------------------------
----таблица клиенты в работе заполняется автоматически при добавлении нового клиента, попадает в работу сотруднику, при совпадении региона проживания клиента и региона работы сотрудника
-Таблица нужна чтоб сотрудник видел только клиентов с которыми ему нужно работать
+
+
+
+ ---таблица клиенты в работе заполняется автоматически при добавлении нового клиента, попадает в работу сотруднику, при совпадении региона проживания клиента и региона работы сотрудника
+    Таблица нужна чтоб сотрудник видел только клиентов с которыми ему нужно работать
 CREATE TABLE clients_enployees
 (
-    id SERIAL,
+    id          SERIAL,
     id_employee BIGINT UNSIGNED NOT NULL,
-    id_client BIGINT UNSIGNED NOT NULL,
-    ds DATETIME DEFAULT CURRENT_TIMESTAMP,
-    df DATETIME DEFAULT NULL
+    id_client   BIGINT UNSIGNED NOT NULL,
+    ds          DATETIME DEFAULT CURRENT_TIMESTAMP,
+    df          DATETIME DEFAULT NULL
 );
-
