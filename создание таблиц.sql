@@ -5,7 +5,7 @@ CREATE DATABASE mobile_collection;
 --Создание таблиц
 --таблицы создавал пока без связей с другими таблицами и без индексов, т.к. сcоздвал базу "из головы"
 
---таблица профиля сотрудников. таблица заполняется где то там в отделе кадров, после изменений данных сотрудника в этой таблице, данные будут меняться в таблице employee, для историчности
+--таблица профиля сотрудников. таблица заполняется где то в отделе кадров, после изменений данных сотрудника в этой таблице, данные будут меняться в таблице employee, для историчности
 
 CREATE TABLE profiles_employeers
 (
@@ -22,22 +22,20 @@ CREATE TABLE profiles_employeers
     updated_at   DATETIME DEFAULT NOW() ON UPDATE NOW()
 );
 
-ALTER TABLE profiles_employeers ADD COLUMN group_id INT UNSIGNED NOT NULL;
 
 
-    --таблица сотрудника, в ней будет информация по изменениям у сотруднников
+
+    --таблица сотрудника, в ней будет информация по изменениям у сотруднников, начало/конец работы, изменение должности
 
 CREATE TABLE employees
 (
     id           BIGINT UNSIGNED NOT NULL,
     ds           DATETIME NOT NULL ,
     df           DATETIME DEFAULT NULL,
-    id_group     INT UNSIGNED NOT NULL,
-    id_pozition  INT UNSIGNED NOT NULL
-
+    id_position  INT NOT NULL
 );
 
-ALTER TABLE employees MODIFY COLUMN id BIGINT UNSIGNED NOT NULL ;
+
 
 --таблица групп пользователей. подразделение где работает сотрудник
 тут записи можно добавлять и удалять при открытии или закрытии нового подразделения
@@ -58,6 +56,7 @@ CREATE TABLE positions
    name VARCHAR(30) not null
 );
 
+
 --таблица регионов тут записи можно добавлять и редактировать
 
 CREATE TABLE regions
@@ -66,6 +65,8 @@ CREATE TABLE regions
     name      VARCHAR(50),
     id_parent INT UNSIGNED default NULL
 );
+
+
 
 --таблица активностей сотрудников
 
@@ -77,43 +78,52 @@ CREATE TABLE actions_employees
     id_type_action   INT UNSIGNED NOT NULL,
     id_result_action INT UNSIGNED NOT NULL,
     date_action      DATETIME DEFAULT CURRENT_TIMESTAMP,
-    id_promise       INT UNSIGNED NOT NULL
+    id_promise       BIGINT UNSIGNED NOT NULL
 );
 
-ALTER TABLE actions_employees MODIFY COLUMN id_client BIGINT UNSIGNED NOT NULL ;
+
 
 --таблица типа контакта(на какой номер звонил или на какой адрес выезжал)
 
 CREATE TABLE contacts
 (
-    id              SERIAL,
+    id              INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     id_type_contact INT UNSIGNED NOT NULL
 );
+
+
 
 --таблица типа активности(звонок, выезд, письмо и.т.д.)
 
 CREATE TABLE types_actions
 (
-    id   SERIAL,
+    id   INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(50)
 );
+
+
 
 --таблица результата активности сотрудника данные добавляются из приложения
 
 CREATE TABLE results_actions
 (
-   id   SERIAL,
+   id   INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
    name VARCHAR(20) NOT NULL
 );
+
+
+
 
 --таблица с контактной информацией сотрудника
 CREATE TABLE contacts_employees
 (
    id           SERIAL,
-   id_employee  INT UNSIGNED       NOT NULL,
+   id_employee  BIGINT UNSIGNED   NOT NULL,
    phone_number VARCHAR(20),
    email        VARCHAR(50) UNIQUE NOT NULL
 );
+
+
 
 --таблица клиентов тут записи можно добавлять
 CREATE TABLE clients
@@ -134,7 +144,7 @@ CREATE TABLE phones_clients
     number    VARCHAR(50),
     actual    BOOLEAN      NOT NULL
 );
-ALTER TABLE phones_clients ADD COLUMN id_type_phone INT UNSIGNED NOT NULL;
+
 
 --таблица типов телефонов
 
@@ -145,7 +155,7 @@ CREATE TABLE types_phones
 );
 
 --таблица адресов клиента
-ALTER TABLE addresses_clients MODIFY COLUMN id_client BIGINT UNSIGNED;
+
 CREATE TABLE addresses_clients
 (
     id        SERIAL,
@@ -161,7 +171,7 @@ CREATE TABLE addresses_clients
 );
 
 ---тип адреса
-ALTER TABLE types_adresses MODIFY COLUMN id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY;
+
 CREATE TABLE types_adresses
 (
     id   INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -181,8 +191,7 @@ CREATE TABLE accounts
     credit_term     INT UNSIGNED NOT NULL,
     dpd             INT UNSIGNED NOT NULL
 );
-ALTER TABLE accounts MODIFY COLUMN id_client BIGINT UNSIGNED NOT NULL;
-ALTER TABLE accounts ADD COLUMN id_type INT UNSIGNED NOT NULL;
+
 
 
 --таблица банков
@@ -208,7 +217,7 @@ CREATE TABLE payments
     id_account BIGINT UNSIGNED NOT NULL ,
     sum_payment FLOAT NOT NULL
 );
-ALTER TABLE payments MODIFY COLUMN id_account BIGINT UNSIGNED NOT NULL;
+
 
 --таблица обещаний оплатить
 CREATE TABLE promises
@@ -219,10 +228,18 @@ CREATE TABLE promises
     date_payment DATETIME NOT NULL
 );
 
-ALTER TABLE promises ADD COLUMN id_employee BIGINT UNSIGNED NOT NULL;
 
 
-ALTER TABLE promises MODIFY COLUMN id_ BIGINT UNSIGNED NOT NULL;
 
+---таблица клиенты в работе заполняется автоматически пори добавлении нового клиента, попадает в работу сотруднику, при совпадении региона проживания клиента и региона работы сотрудника
 
-ALTER TABLE promises CHANGE account_id id_account BIGINT UNSIGNED;
+CREATE TABLE clients_enployees
+(
+    id SERIAL,
+    id_employee BIGINT UNSIGNED NOT NULL,
+    id_client BIGINT UNSIGNED NOT NULL,
+    ds DATETIME DEFAULT CURRENT_TIMESTAMP,
+    df DATETIME DEFAULT NULL
+);
+
+ALTER TABLE clients_enployees RENAME clients_employees;
