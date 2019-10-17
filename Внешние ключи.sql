@@ -98,6 +98,9 @@ ALTER TABLE regions
         FOREIGN KEY (id_parent) REFERENCES regions(id)
             ON DELETE CASCADE;
 
+alter table regions
+    drop foreign key id_reg_parent_fk;
+
 
 
 ALTER TABLE profiles_employeers
@@ -105,6 +108,8 @@ ALTER TABLE profiles_employeers
         FOREIGN KEY (id_region) REFERENCES regions(id)
             ON DELETE CASCADE;
 
+alter table profiles_employeers
+    drop foreign key id_reg_empl_fk;
 
 
 ALTER TABLE clients_employees
@@ -118,7 +123,7 @@ ALTER TABLE clients_employees
             ON DELETE CASCADE;
 
 
-ALTER TABLE em
+ALTER TABLE employees
     ADD CONSTRAINT id_em_em_fk
         FOREIGN KEY (id_employee) REFERENCES profiles_employeers(id)
             ON DELETE CASCADE;
@@ -129,3 +134,28 @@ ALTER TABLE employees
     ADD CONSTRAINT id_employ_fk
         FOREIGN KEY (id) REFERENCES profiles_employeers(id)
             ON DELETE CASCADE;
+
+ALTER TABLE addresses_clients
+    ADD CONSTRAINT id_addr_region_fk
+        FOREIGN KEY (id) REFERENCES profiles_employeers(id_region)
+            ON DELETE CASCADE;
+
+ALTER TABLE employees
+    ADD CONSTRAINT id_addr_region_fk
+        FOREIGN KEY (id) REFERENCES profiles_employeers(id_region)
+            ON DELETE CASCADE;
+
+
+ALTER TABLE actions_employees
+    ADD CONSTRAINT id_prom_action_fk
+        FOREIGN KEY (id_promise) REFERENCES promises(id)
+            ON DELETE CASCADE;
+
+ALTER TABLE promises
+    ADD CONSTRAINT id_prom_action_fk
+        FOREIGN KEY (id_promise) REFERENCES actions_employees(id)
+            ON DELETE CASCADE;
+
+
+alter table actions_employees
+    drop foreign key id_prom_action_fk;
