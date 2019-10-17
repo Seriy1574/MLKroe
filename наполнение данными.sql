@@ -129,5 +129,5 @@ INSERT  INTO banks (id, name) VALUE
 (default, 'Восточный'),
 (default, 'Росбанк');
 
-
+yt gjkexftncz yjhvfkbpjdfnm
 
