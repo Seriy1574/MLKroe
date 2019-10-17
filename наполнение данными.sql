@@ -113,11 +113,21 @@ VALUE
     (DEFAULT, 'Макс', 'Филиппов', 'Аланович', '1988-11-15', 12, DEFAULT, 0, DEFAULT, 1, DEFAULT),
     (DEFAULT, 'Дмитрий', 'Данилов', 'Пахомович', '1981-06-30', 13, DEFAULT, 0, DEFAULT, 1, DEFAULT);
 
+Наполнил данные клиентов
+
+UPDATE clients SET birthday = birthday - interval 10 year  WHERE birthday > '2001-11-11';
+
+INSERT  INTO banks (id, name) VALUE
+(default, 'Альфа банк'),
+(default, 'City Bank'),
+(default, 'Сбербанк'),
+(default, 'Промсвязьбанк'),
+(default, 'ВТБ'),
+(default, 'Россельхозбанк'),
+(default, 'Москомприват'),
+(default, 'МКБ'),
+(default, 'Восточный'),
+(default, 'Росбанк');
 
 
 
-
-
-    INSERT INTO groups_employees(id, ds, df, id_parent)
-    VALUE
-    SELECT id, name, id_parent FROM regions r

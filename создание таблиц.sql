@@ -126,10 +126,11 @@ CREATE TABLE clients
     first_name       VARCHAR(20) NOT NULL,
     last_name        VARCHAR(20) NOT NULL,
     patronymic       VARCHAR(20) NOT NULL,
-    passport         VARCHAR(20) NOT NULL
+    passport         VARCHAR(20) NOT NULL,
+    birthday         DATETIME NOT NULL
 );
 
-ALTER TABLE clients ADD COLUMN id_type_client INT UNSIGNED NOT NULL ;
+
 
 CREATE TABLE types_clients
 (
@@ -138,6 +139,14 @@ CREATE TABLE types_clients
 );
 
 
+
+DROP  TABLE types_clients;
+(
+    id   INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(20)
+
+
+)ж
 
 
 ------------------------------------------------------------------------------------------------------------------------
@@ -199,11 +208,15 @@ CREATE TABLE accounts
     sum_credit      FLOAT NOT NULL,
     date_credit     DATETIME NOT NULL,
     credit_term     INT UNSIGNED NOT NULL,
-    dpd             INT UNSIGNED NOT NULL
+    dpd             INT UNSIGNED NOT NULL,
+    id_bank         INT UNSIGNED NOT NULL,
+    sum_dept        FLOAT UNSIGNED
 );
 
+ALTER TABLE accounts ADD COLUMN id_bank FLOAT UNSIGNED;
 
-------------------------------------------------------------------------------------------------------------------------
+ALTER TABLE accounts DROP COLUMN id_type FLOAT UNSIGNED;
+    ------------------------------------------------------------------------------------------------------------------------
 --таблица банков
 CREATE TABLE banks
 (
