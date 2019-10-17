@@ -55,10 +55,6 @@ ALTER TABLE promises
         FOREIGN KEY (id_employee) REFERENCES profiles_employeers(id)
             ON DELETE CASCADE;
 
-ALTER TABLE profiles_employeers
-    ADD CONSTRAINT id_group_fk
-        FOREIGN KEY (id_group) REFERENCES groups_employees(id)
-            ON DELETE CASCADE;
 
 
 ALTER TABLE profiles_employeers
@@ -157,5 +153,11 @@ ALTER TABLE promises
             ON DELETE CASCADE;
 
 
-alter table actions_employees
-    drop foreign key id_prom_action_fk;
+alter table profiles_employeers
+    drop foreign key id_group_fk;
+
+
+ALTER TABLE profiles_employeers
+    ADD CONSTRAINT id_group_fk
+        FOREIGN KEY (id_group) REFERENCES groups_employees(id)
+            ON DELETE CASCADE;

@@ -21,7 +21,7 @@ CREATE TABLE profiles_employeers
     id_pozition  INT unsigned DEFAULT NULL,
     updated_at   DATETIME DEFAULT NOW() ON UPDATE NOW()
 );
-
+ALTER TABLE profiles_employeers DROP COLUMN id_group;
 
 ------------------------------------------------------------------------------------------------------------------------
     --таблица сотрудника, в ней будет информация по изменениям у сотруднников, начало/конец работы, изменение должности
