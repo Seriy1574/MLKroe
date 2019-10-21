@@ -79,17 +79,18 @@ CREATE TABLE actions_employees
     id_type_action   INT UNSIGNED NOT NULL,
     id_result_action INT UNSIGNED NOT NULL,
     date_action      DATETIME DEFAULT CURRENT_TIMESTAMP,
-    id_promise       BIGINT UNSIGNED NOT NULL,
+    id_promise       BIGINT UNSIGNED DEFAULT NULL,
     id_contact       INT UNSIGNED NOT NULL
 );
 
+ALTER TABLE actions_employees ADD COLUMN  id_promise  BIGINT UNSIGNED NOT NULL
 ------------------------------------------------------------------------------------------------------------------------
 --таблица типа контакта(на какой номер звонил или на какой адрес выезжал)
 
 CREATE TABLE contacts
 (
     id              INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    id_type_contact INT UNSIGNED NOT NULL
+    name            VARCHAR(20) NOT NULL
 );
 
 ------------------------------------------------------------------------------------------------------------------------

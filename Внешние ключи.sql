@@ -153,8 +153,7 @@ ALTER TABLE promises
             ON DELETE CASCADE;
 
 
-alter table profiles_employeers
-    drop foreign key id_group_fk;
+
 
 
 
