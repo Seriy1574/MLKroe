@@ -83,7 +83,7 @@ CREATE TABLE actions_employees
     id_contact       INT UNSIGNED NOT NULL
 );
 
-ALTER TABLE actions_employees ADD COLUMN  id_promise  BIGINT UNSIGNED NOT NULL
+
 ------------------------------------------------------------------------------------------------------------------------
 --таблица типа контакта(на какой номер звонил или на какой адрес выезжал)
 
