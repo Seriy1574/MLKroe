@@ -160,8 +160,10 @@ CREATE TABLE phones_clients
     id        SERIAL,
     id_client BIGINT UNSIGNED NOT NULL,
     number    VARCHAR(50),
-    actual    BOOLEAN      NOT NULL
+    actual    BOOLEAN      NOT NULL,
+    id_type_phone INT UNSIGNED
 );
+
 
 ------------------------------------------------------------------------------------------------------------------------
 --таблица типов телефонов
@@ -258,10 +260,13 @@ CREATE TABLE promises
     date_promise DATETIME DEFAULT CURRENT_TIMESTAMP,
     date_payment DATETIME NOT NULL,
     id_employee  BIGINT UNSIGNED NOT NULL,
-    id_promise   BIGINT NOT NULL
+    id_promise   BIGINT NOT NULL,
+    summ_payment FLOAT UNSIGNED NOT NULL
 );
 
+ALTER TABLE promises ADD COLUMN  summ_payment FLOAT UNSIGNED NOT NULL
 
+UPDATE promises SET summ_payment = 10000 WHERE id >=4
 ------------------------------------------------------------------------------------------------------------------------
 
 

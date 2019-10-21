@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20dfd516-2471-4b1c-becf-430802f5d46f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Внешние ключи.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Внешние ключи.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/наполнение данными.sql" beforeDir="false" afterPath="$PROJECT_DIR$/наполнение данными.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/создание таблиц.sql" beforeDir="false" afterPath="$PROJECT_DIR$/создание таблиц.sql" afterDir="false" />
     </list>
@@ -43,34 +42,6 @@
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="mobile_collection: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="actions_employees: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="mobile_collection: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="addresses_clients: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="mobile_collection: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="promises: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="mobile_collection: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="types_products: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="VK: schema" type="76f4a085:MysqlImplModel$Schema" />
       </path>
       <path>
@@ -100,11 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/создание таблиц.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="253" selection-start-line="253" selection-end-line="261" selection-end-column="2" />
+            <state relative-caret-position="237">
+              <caret line="250" lean-forward="true" selection-start-line="250" selection-end-line="250" />
             </state>
           </provider>
         </entry>
@@ -112,8 +83,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/7f600ea1-097b-4d11-9998-a836639893f6/console_2.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+            <state>
+              <caret column="21" lean-forward="true" selection-start-column="21" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -134,38 +105,149 @@
               <ID>DATABASE</ID>
               <OriginalElement>7f600ea1-097b-4d11-9998-a836639893f6.SCHEMA:mobile_collection</OriginalElement>
               <nodes>
-                <node x="525.0" y="895.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.ppavka</node>
-                <node x="497.0" y="574.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.payments</node>
-                <node x="0.0" y="370.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.promises</node>
-                <node x="686.0" y="370.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.clients_employees</node>
-                <node x="485.0" y="0.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.accounts</node>
-                <node x="0.0" y="756.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.regions</node>
-                <node x="350.0" y="895.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.types_products</node>
-                <node x="175.0" y="895.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.types_adresses</node>
-                <node x="0.0" y="895.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.types_actions</node>
-                <node x="252.0" y="370.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.addresses_clients</node>
-                <node x="764.0" y="756.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.banks</node>
-                <node x="245.0" y="574.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.contacts_employees</node>
-                <node x="738.0" y="574.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.employees</node>
-                <node x="234.0" y="756.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.results_actions</node>
-                <node x="589.0" y="756.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.positions</node>
-                <node x="414.0" y="756.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.types_phones</node>
-                <node x="0.0" y="122.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.actions_employees</node>
-                <node x="485.0" y="370.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.clients</node>
-                <node x="38.5" y="0.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.contacts</node>
-                <node x="252.0" y="0.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.profiles_employeers</node>
-                <node x="0.0" y="574.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.phones_clients</node>
+                <node x="1392.25" y="582.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.payments</node>
+                <node x="1165.25" y="560.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.promises</node>
+                <node x="585.7393750000001" y="571.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.clients_employees</node>
+                <node x="1300.875" y="220.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.accounts</node>
+                <node x="1055.489375" y="32.5">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.regions</node>
+                <node x="1340.375" y="43.5">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.types_products</node>
+                <node x="735.4893750000001" y="43.5">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.types_adresses</node>
+                <node x="0.0" y="307.5">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.types_actions</node>
+                <node x="659.4893750000001" y="264.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.addresses_clients</node>
+                <node x="1490.375" y="43.5">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.banks</node>
+                <node x="938.25" y="582.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.contacts_employees</node>
+                <node x="370.0" y="307.5">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.results_actions</node>
+                <node x="885.4893750000001" y="43.5">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.positions</node>
+                <node x="135.0" y="43.5">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.types_phones</node>
+                <node x="343.2122916666667" y="538.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.actions_employees</node>
+                <node x="543.9622916666667" y="0.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.clients</node>
+                <node x="0.0" y="786.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.contacts</node>
+                <node x="973.1541666666667" y="209.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.profiles_employeers</node>
+                <node x="150.0" y="275.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.phones_clients</node>
               </nodes>
               <notes />
               <edges>
-                <edge source="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.actions_employees" target="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.contacts">
-                  <point x="0.0" y="-101.5" />
+                <edge source="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.addresses_clients" target="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.types_adresses">
+                  <point x="47.0" y="-79.5" />
+                  <point x="0.0" y="36.0" />
+                </edge>
+                <edge source="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.actions_employees" target="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.types_actions">
+                  <point x="-77.625" y="-101.5" />
+                  <point x="369.0872916666667" y="518.0" />
+                  <point x="65.0" y="518.0" />
+                  <point x="0.0" y="36.0" />
+                </edge>
+                <edge source="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.addresses_clients" target="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.clients">
+                  <point x="-47.0" y="-79.5" />
+                  <point x="706.4893750000001" y="189.0" />
+                  <point x="653.1622916666668" y="189.0" />
+                  <point x="31.200000000000045" y="79.5" />
+                </edge>
+                <edge source="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.accounts" target="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.banks">
+                  <point x="69.66666666666669" y="-123.5" />
+                  <point x="1475.0416666666667" y="189.0" />
+                  <point x="1555.375" y="189.0" />
+                  <point x="0.0" y="36.0" />
+                </edge>
+                <edge source="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.profiles_employeers" target="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.positions">
+                  <point x="-47.0" y="-134.5" />
+                  <point x="1020.1541666666667" y="189.0" />
+                  <point x="950.4893750000001" y="189.0" />
+                  <point x="0.0" y="36.0" />
+                </edge>
+                <edge source="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.promises" target="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.profiles_employeers">
+                  <point x="-51.75" y="-79.5" />
+                  <point x="1217.0" y="518.0" />
+                  <point x="1137.6541666666667" y="518.0" />
+                  <point x="70.5" y="134.5" />
+                </edge>
+                <edge source="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.regions" target="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.regions">
+                  <point x="-47.25" y="47.0" />
+                  <point x="1102.739375" y="146.5" />
+                  <point x="1035.489375" y="146.5" />
+                  <point x="1035.489375" y="79.5" />
+                  <point x="-94.5" y="-0.0" />
+                </edge>
+                <edge source="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.accounts" target="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.types_products">
+                  <point x="0.0" y="-123.5" />
+                  <point x="0.0" y="36.0" />
+                </edge>
+                <edge source="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.actions_employees" target="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.profiles_employeers">
+                  <point x="77.625" y="-101.5" />
+                  <point x="524.3372916666667" y="498.0" />
+                  <point x="996.6541666666667" y="498.0" />
+                  <point x="-70.5" y="134.5" />
+                </edge>
+                <edge source="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.profiles_employeers" target="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.regions">
+                  <point x="47.0" y="-134.5" />
+                  <point x="1114.1541666666667" y="189.0" />
+                  <point x="1197.239375" y="189.0" />
+                  <point x="47.25" y="47.0" />
+                </edge>
+                <edge source="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.actions_employees" target="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.results_actions">
+                  <point x="-25.875" y="-101.5" />
+                  <point x="420.8372916666667" y="518.0" />
+                  <point x="437.5" y="518.0" />
+                  <point x="0.0" y="36.0" />
+                </edge>
+                <edge source="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.clients_employees" target="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.clients">
+                  <point x="-51.75" y="-68.5" />
+                  <point x="637.4893750000001" y="189.0" />
+                  <point x="621.9622916666667" y="189.0" />
+                  <point x="0.0" y="79.5" />
+                </edge>
+                <edge source="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.promises" target="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.accounts">
+                  <point x="51.75" y="-79.5" />
+                  <point x="1320.5" y="518.0" />
+                  <point x="1353.125" y="518.0" />
+                  <point x="-52.25" y="123.5" />
+                </edge>
+                <edge source="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.contacts_employees" target="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.profiles_employeers">
+                  <point x="0.0" y="-57.5" />
+                  <point x="1041.75" y="518.0" />
+                  <point x="1090.6541666666667" y="518.0" />
+                  <point x="23.5" y="134.5" />
+                </edge>
+                <edge source="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.phones_clients" target="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.clients">
+                  <point x="50.0" y="-68.5" />
+                  <point x="300.0" y="179.0" />
+                  <point x="559.5622916666667" y="179.0" />
+                  <point x="-62.39999999999998" y="79.5" />
+                </edge>
+                <edge source="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.actions_employees" target="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.clients">
+                  <point x="25.875" y="-101.5" />
+                  <point x="472.5872916666667" y="518.0" />
+                  <point x="515.5" y="518.0" />
+                  <point x="515.5" y="189.0" />
+                  <point x="590.7622916666667" y="189.0" />
+                  <point x="-31.200000000000045" y="79.5" />
+                </edge>
+                <edge source="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.accounts" target="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.clients">
+                  <point x="-69.66666666666669" y="-123.5" />
+                  <point x="1335.7083333333333" y="179.0" />
+                  <point x="684.3622916666667" y="179.0" />
+                  <point x="62.39999999999998" y="79.5" />
+                </edge>
+                <edge source="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.payments" target="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.accounts">
+                  <point x="0.0" y="-57.5" />
+                  <point x="1490.25" y="518.0" />
+                  <point x="1457.625" y="518.0" />
+                  <point x="52.25" y="123.5" />
+                </edge>
+                <edge source="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.clients_employees" target="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.profiles_employeers">
+                  <point x="51.75" y="-68.5" />
+                  <point x="740.9893750000001" y="508.0" />
+                  <point x="1043.6541666666667" y="508.0" />
+                  <point x="-23.5" y="134.5" />
+                </edge>
+                <edge source="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.phones_clients" target="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.types_phones">
+                  <point x="-50.0" y="-68.5" />
                   <point x="0.0" y="36.0" />
                 </edge>
               </edges>
               <settings layout="Hierarchic Group" zoom="1.0459016393442624" x="209.4670846394984" y="209.4670846394984" />
               <SelectedNodes>
-                <node>7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.ppavka</node>
+                <node>7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.phones_clients</node>
               </SelectedNodes>
               <Categories>
                 <Category>Key columns</Category>
@@ -177,14 +259,18 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="das://7f600ea1-097b-4d11-9998-a836639893f6/schema/mobile_collection/table/phones_clients.sql">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="64" lean-forward="true" selection-start-line="14" selection-start-column="64" selection-end-line="14" selection-end-column="64" />
+            </state>
+          </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Внешние ключи.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="172" column="30" lean-forward="true" selection-start-line="172" selection-start-column="30" selection-end-line="172" selection-end-column="30" />
+            <state relative-caret-position="121">
+              <caret line="159" column="30" lean-forward="true" selection-start-line="159" selection-start-column="30" selection-end-line="159" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -192,8 +278,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/наполнение данными.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="185" selection-start-line="185" selection-end-line="185" />
+            <state relative-caret-position="214">
+              <caret line="184" lean-forward="true" selection-start-line="184" selection-end-line="184" />
             </state>
           </provider>
         </entry>
@@ -229,10 +315,11 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/7f600ea1-097b-4d11-9998-a836639893f6/console_1.sql" />
         <option value="7f600ea1-097b-4d11-9998-a836639893f6/schema/mobile_collection/table/phones_clients.sql" />
         <option value="$PROJECT_DIR$/Скрипты выборок.sql" />
-        <option value="$PROJECT_DIR$/создание таблиц.sql" />
-        <option value="$PROJECT_DIR$/наполнение данными.sql" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/7f600ea1-097b-4d11-9998-a836639893f6/console_2.sql" />
         <option value="$PROJECT_DIR$/Внешние ключи.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/наполнение данными.sql" />
+        <option value="$PROJECT_DIR$/создание таблиц.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/7f600ea1-097b-4d11-9998-a836639893f6/console_2.sql" />
       </list>
     </option>
   </component>
@@ -246,7 +333,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="810" />
     <option name="y" value="42" />
     <option name="width" value="1609" />
@@ -305,12 +392,12 @@
       <option name="presentableId" value="Default" />
       <updated>1571318202206</updated>
       <workItem from="1571318222863" duration="8178000" />
-      <workItem from="1571637933261" duration="15612000" />
+      <workItem from="1571637933261" duration="18294000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76150000" />
+    <option name="totallyTimeSpent" value="78832000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
@@ -335,7 +422,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.11111111" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Database Console" order="12" visible="true" weight="0.33333334" />
+      <window_info active="true" anchor="bottom" id="Database Console" order="12" visible="true" weight="0.5" />
       <window_info anchor="bottom" id="Messages" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -345,7 +432,7 @@
       <window_info anchor="right" id="Maven" order="5" weight="0.3298887" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info active="true" anchor="right" id="Database" order="8" visible="true" weight="0.21422893" />
+      <window_info anchor="right" id="Database" order="8" visible="true" weight="0.21422893" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2154213" />
@@ -417,34 +504,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/создание таблиц.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="253" selection-start-line="253" selection-end-line="261" selection-end-column="2" />
+    <entry file="das://7f600ea1-097b-4d11-9998-a836639893f6/schema/mobile_collection/table/accounts">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="869b2b5a-226c-4ae6-a370-8c968350dc92">
+          <filtering>
+            <filter text="" />
+          </filtering>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/наполнение данными.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="185" selection-start-line="185" selection-end-line="185" />
+        <state relative-caret-position="214">
+          <caret line="184" lean-forward="true" selection-start-line="184" selection-end-line="184" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Внешние ключи.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="159" column="30" lean-forward="true" selection-start-line="159" selection-start-column="30" selection-end-line="159" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="das://7f600ea1-097b-4d11-9998-a836639893f6/schema/mobile_collection/table/phones_clients.sql">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="64" lean-forward="true" selection-start-line="14" selection-start-column="64" selection-end-line="14" selection-end-column="64" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Скрипты выборок.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/7f600ea1-097b-4d11-9998-a836639893f6/console_2.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -454,38 +547,149 @@
           <ID>DATABASE</ID>
           <OriginalElement>7f600ea1-097b-4d11-9998-a836639893f6.SCHEMA:mobile_collection</OriginalElement>
           <nodes>
-            <node x="525.0" y="895.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.ppavka</node>
-            <node x="497.0" y="574.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.payments</node>
-            <node x="0.0" y="370.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.promises</node>
-            <node x="686.0" y="370.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.clients_employees</node>
-            <node x="485.0" y="0.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.accounts</node>
-            <node x="0.0" y="756.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.regions</node>
-            <node x="350.0" y="895.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.types_products</node>
-            <node x="175.0" y="895.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.types_adresses</node>
-            <node x="0.0" y="895.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.types_actions</node>
-            <node x="252.0" y="370.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.addresses_clients</node>
-            <node x="764.0" y="756.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.banks</node>
-            <node x="245.0" y="574.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.contacts_employees</node>
-            <node x="738.0" y="574.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.employees</node>
-            <node x="234.0" y="756.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.results_actions</node>
-            <node x="589.0" y="756.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.positions</node>
-            <node x="414.0" y="756.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.types_phones</node>
-            <node x="0.0" y="122.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.actions_employees</node>
-            <node x="485.0" y="370.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.clients</node>
-            <node x="38.5" y="0.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.contacts</node>
-            <node x="252.0" y="0.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.profiles_employeers</node>
-            <node x="0.0" y="574.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.phones_clients</node>
+            <node x="1392.25" y="582.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.payments</node>
+            <node x="1165.25" y="560.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.promises</node>
+            <node x="585.7393750000001" y="571.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.clients_employees</node>
+            <node x="1300.875" y="220.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.accounts</node>
+            <node x="1055.489375" y="32.5">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.regions</node>
+            <node x="1340.375" y="43.5">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.types_products</node>
+            <node x="735.4893750000001" y="43.5">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.types_adresses</node>
+            <node x="0.0" y="307.5">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.types_actions</node>
+            <node x="659.4893750000001" y="264.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.addresses_clients</node>
+            <node x="1490.375" y="43.5">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.banks</node>
+            <node x="938.25" y="582.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.contacts_employees</node>
+            <node x="370.0" y="307.5">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.results_actions</node>
+            <node x="885.4893750000001" y="43.5">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.positions</node>
+            <node x="135.0" y="43.5">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.types_phones</node>
+            <node x="343.2122916666667" y="538.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.actions_employees</node>
+            <node x="543.9622916666667" y="0.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.clients</node>
+            <node x="0.0" y="786.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.contacts</node>
+            <node x="973.1541666666667" y="209.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.profiles_employeers</node>
+            <node x="150.0" y="275.0">7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.phones_clients</node>
           </nodes>
           <notes />
           <edges>
-            <edge source="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.actions_employees" target="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.contacts">
-              <point x="0.0" y="-101.5" />
+            <edge source="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.addresses_clients" target="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.types_adresses">
+              <point x="47.0" y="-79.5" />
+              <point x="0.0" y="36.0" />
+            </edge>
+            <edge source="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.actions_employees" target="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.types_actions">
+              <point x="-77.625" y="-101.5" />
+              <point x="369.0872916666667" y="518.0" />
+              <point x="65.0" y="518.0" />
+              <point x="0.0" y="36.0" />
+            </edge>
+            <edge source="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.addresses_clients" target="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.clients">
+              <point x="-47.0" y="-79.5" />
+              <point x="706.4893750000001" y="189.0" />
+              <point x="653.1622916666668" y="189.0" />
+              <point x="31.200000000000045" y="79.5" />
+            </edge>
+            <edge source="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.accounts" target="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.banks">
+              <point x="69.66666666666669" y="-123.5" />
+              <point x="1475.0416666666667" y="189.0" />
+              <point x="1555.375" y="189.0" />
+              <point x="0.0" y="36.0" />
+            </edge>
+            <edge source="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.profiles_employeers" target="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.positions">
+              <point x="-47.0" y="-134.5" />
+              <point x="1020.1541666666667" y="189.0" />
+              <point x="950.4893750000001" y="189.0" />
+              <point x="0.0" y="36.0" />
+            </edge>
+            <edge source="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.promises" target="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.profiles_employeers">
+              <point x="-51.75" y="-79.5" />
+              <point x="1217.0" y="518.0" />
+              <point x="1137.6541666666667" y="518.0" />
+              <point x="70.5" y="134.5" />
+            </edge>
+            <edge source="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.regions" target="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.regions">
+              <point x="-47.25" y="47.0" />
+              <point x="1102.739375" y="146.5" />
+              <point x="1035.489375" y="146.5" />
+              <point x="1035.489375" y="79.5" />
+              <point x="-94.5" y="-0.0" />
+            </edge>
+            <edge source="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.accounts" target="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.types_products">
+              <point x="0.0" y="-123.5" />
+              <point x="0.0" y="36.0" />
+            </edge>
+            <edge source="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.actions_employees" target="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.profiles_employeers">
+              <point x="77.625" y="-101.5" />
+              <point x="524.3372916666667" y="498.0" />
+              <point x="996.6541666666667" y="498.0" />
+              <point x="-70.5" y="134.5" />
+            </edge>
+            <edge source="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.profiles_employeers" target="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.regions">
+              <point x="47.0" y="-134.5" />
+              <point x="1114.1541666666667" y="189.0" />
+              <point x="1197.239375" y="189.0" />
+              <point x="47.25" y="47.0" />
+            </edge>
+            <edge source="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.actions_employees" target="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.results_actions">
+              <point x="-25.875" y="-101.5" />
+              <point x="420.8372916666667" y="518.0" />
+              <point x="437.5" y="518.0" />
+              <point x="0.0" y="36.0" />
+            </edge>
+            <edge source="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.clients_employees" target="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.clients">
+              <point x="-51.75" y="-68.5" />
+              <point x="637.4893750000001" y="189.0" />
+              <point x="621.9622916666667" y="189.0" />
+              <point x="0.0" y="79.5" />
+            </edge>
+            <edge source="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.promises" target="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.accounts">
+              <point x="51.75" y="-79.5" />
+              <point x="1320.5" y="518.0" />
+              <point x="1353.125" y="518.0" />
+              <point x="-52.25" y="123.5" />
+            </edge>
+            <edge source="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.contacts_employees" target="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.profiles_employeers">
+              <point x="0.0" y="-57.5" />
+              <point x="1041.75" y="518.0" />
+              <point x="1090.6541666666667" y="518.0" />
+              <point x="23.5" y="134.5" />
+            </edge>
+            <edge source="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.phones_clients" target="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.clients">
+              <point x="50.0" y="-68.5" />
+              <point x="300.0" y="179.0" />
+              <point x="559.5622916666667" y="179.0" />
+              <point x="-62.39999999999998" y="79.5" />
+            </edge>
+            <edge source="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.actions_employees" target="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.clients">
+              <point x="25.875" y="-101.5" />
+              <point x="472.5872916666667" y="518.0" />
+              <point x="515.5" y="518.0" />
+              <point x="515.5" y="189.0" />
+              <point x="590.7622916666667" y="189.0" />
+              <point x="-31.200000000000045" y="79.5" />
+            </edge>
+            <edge source="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.accounts" target="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.clients">
+              <point x="-69.66666666666669" y="-123.5" />
+              <point x="1335.7083333333333" y="179.0" />
+              <point x="684.3622916666667" y="179.0" />
+              <point x="62.39999999999998" y="79.5" />
+            </edge>
+            <edge source="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.payments" target="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.accounts">
+              <point x="0.0" y="-57.5" />
+              <point x="1490.25" y="518.0" />
+              <point x="1457.625" y="518.0" />
+              <point x="52.25" y="123.5" />
+            </edge>
+            <edge source="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.clients_employees" target="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.profiles_employeers">
+              <point x="51.75" y="-68.5" />
+              <point x="740.9893750000001" y="508.0" />
+              <point x="1043.6541666666667" y="508.0" />
+              <point x="-23.5" y="134.5" />
+            </edge>
+            <edge source="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.phones_clients" target="7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.types_phones">
+              <point x="-50.0" y="-68.5" />
               <point x="0.0" y="36.0" />
             </edge>
           </edges>
           <settings layout="Hierarchic Group" zoom="1.0459016393442624" x="209.4670846394984" y="209.4670846394984" />
           <SelectedNodes>
-            <node>7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.ppavka</node>
+            <node>7f600ea1-097b-4d11-9998-a836639893f6.TABLE:mobile_collection.phones_clients</node>
           </SelectedNodes>
           <Categories>
             <Category>Key columns</Category>
@@ -494,10 +698,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Внешние ключи.sql">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/7f600ea1-097b-4d11-9998-a836639893f6/console_2.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="172" column="30" lean-forward="true" selection-start-line="172" selection-start-column="30" selection-end-line="172" selection-end-column="30" />
+        <state>
+          <caret column="21" lean-forward="true" selection-start-column="21" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/создание таблиц.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="250" lean-forward="true" selection-start-line="250" selection-end-line="250" />
         </state>
       </provider>
     </entry>
