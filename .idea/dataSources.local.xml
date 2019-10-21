@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="@localhost" uuid="7f600ea1-097b-4d11-9998-a836639893f6">
+      <database-info product="MySQL" version="8.0.17" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-java-8.0.15 (Revision: 79a4336f140499bd22dd07f02b708e163844e3d5)" dbms="MYSQL" exact-version="8.0.17" exact-driver-version="8.0">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <introspection-schemas>*:VK,lesson5_1,lesson5_2,mobile_collection</introspection-schemas>
+      <ssh-properties>
+        <enabled>true</enabled>
+        <proxy-host>3.122.232.46</proxy-host>
+        <user>ubuntu</user>
+        <use-password>false</use-password>
+        <auth-type>KEY_PAIR</auth-type>
+        <private-key-path>C:\Users\kroese\Desktop\GB\ИИ\Введение в Linux и облачные вычисления\GB2.pem</private-key-path>
+      </ssh-properties>
+    </data-source>
+  </component>
+</project>
