@@ -5,7 +5,7 @@
 
 как то не правильно чтоли.
 --транзакция
-/*START TRANSACTION;
+START TRANSACTION;
 INSERT INTO profiles_employeers
      (id,
      first_name,
@@ -30,7 +30,9 @@ VALUE     (NULL,'Крое','Сергей','Евгеньевич','1980-11-15',20
 INSERT INTO  employees (id, ds, df, id_group, id_pozition)
 SELECT ID AS id, created_at AS ds, updated_at AS df, group_id, id_pozition FROM profiles_employeers
 WHERE created_at IN (SELECT MAX(created_at) FROM profiles_employeers);
-COMMIT;*/
+COMMIT;
+
+
 
 ---триггер тоже переносит данные, но только по одной записи, массовый пернос работает криво
 
@@ -86,3 +88,25 @@ UPDATE users
 SET updated_at = created_at
 WHERE id IN (SELECT id FROM del
 );
+
+
+
+--транзакция уменьшения суммы задолженности
+USE mobile_collection;
+
+SELECT * FROM accounts WHERE id = 1;
++----+------------------+-----------+-----------------+------------+---------------------+-------------+-----+---------+----------+
+| id | number_count     | id_client | id_type_product | sum_credit | date_credit         | credit_term | dpd | id_bank | sum_dept |
++----+------------------+-----------+-----------------+------------+---------------------+-------------+-----+---------+----------+
+|  1 | 5563151554477328 |        80 |               1 |     702036 | 1975-07-17 00:00:00 |          18 | 861 |       7 |  4596550 |
++----+------------------+-----------+-----------------+------------+---------------------+-------------+-----+---------+----------+
+
+
+
+START TRANSACTION;
+
+INSERT INTO payments
+
+(id, id_account, sum_payment, date_payment)
+    VALUE     (NULL, 1, 2000000, DEFAULT);
+UPDATE accounts SET sum_dept = sum_dept -(SELECT p.sum_payment  FROM payments p  order by p.date_payment limit 1);

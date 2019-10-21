@@ -2967,9 +2967,9 @@ updated_at</ColNames>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="645" parent="320" name="id_promise">
+    <column id="645" parent="320" name="promise">
       <Position>8</Position>
-      <DataType>bigint(20)|0s</DataType>
+      <DataType>tinyint(1)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <index id="646" parent="320" name="id">
@@ -3603,214 +3603,227 @@ updated_at</ColNames>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="761" parent="333" name="id">
+    <column id="761" parent="333" name="summ_payment">
+      <Position>7</Position>
+      <DataType>float unsigned|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="762" parent="333" name="id">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="762" parent="333" name="id_promise_fk">
+    <index id="763" parent="333" name="id_promise_fk">
       <ColNames>id_account</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="763" parent="333" name="id_prom_empl_fk">
+    <index id="764" parent="333" name="id_prom_empl_fk">
       <ColNames>id_employee</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="764" parent="333" name="id_prom_action_fk">
+    <index id="765" parent="333" name="id_prom_act_fk">
       <ColNames>id_promise</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="765" parent="333" name="id">
+    <key id="766" parent="333" name="id">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>id</UnderlyingIndexName>
     </key>
-    <foreign-key id="766" parent="333" name="id_promise_fk">
+    <foreign-key id="767" parent="333" name="id_promise_fk">
       <ColNames>id_account</ColNames>
       <RefSchemaName>mobile_collection</RefSchemaName>
       <RefTableName>accounts</RefTableName>
       <RefColNames>id</RefColNames>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="767" parent="333" name="id_prom_empl_fk">
+    <foreign-key id="768" parent="333" name="id_prom_empl_fk">
       <ColNames>id_employee</ColNames>
       <RefSchemaName>mobile_collection</RefSchemaName>
       <RefTableName>profiles_employeers</RefTableName>
       <RefColNames>id</RefColNames>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="768" parent="334" name="id">
+    <foreign-key id="769" parent="333" name="id_prom_act_fk">
+      <ColNames>id_promise</ColNames>
+      <RefSchemaName>mobile_collection</RefSchemaName>
+      <RefTableName>actions_employees</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="770" parent="334" name="id">
       <Position>1</Position>
       <DataType>bigint(20) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="769" parent="334" name="name">
+    <column id="771" parent="334" name="name">
       <Position>2</Position>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="770" parent="334" name="id_parent">
+    <column id="772" parent="334" name="id_parent">
       <Position>3</Position>
       <DataType>bigint(20) unsigned|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="771" parent="334" name="id">
+    <index id="773" parent="334" name="id">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="772" parent="334" name="id_2">
+    <index id="774" parent="334" name="id_2">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="773" parent="334" name="id_reg_parent_fk">
+    <index id="775" parent="334" name="id_reg_parent_fk">
       <ColNames>id_parent</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="774" parent="334" name="PRIMARY">
+    <key id="776" parent="334" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="775" parent="334" name="id">
+    <key id="777" parent="334" name="id">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>id</UnderlyingIndexName>
     </key>
-    <key id="776" parent="334" name="id_2">
+    <key id="778" parent="334" name="id_2">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>id_2</UnderlyingIndexName>
     </key>
-    <foreign-key id="777" parent="334" name="id_reg_parent_fk">
+    <foreign-key id="779" parent="334" name="id_reg_parent_fk">
       <ColNames>id_parent</ColNames>
       <RefSchemaName>mobile_collection</RefSchemaName>
       <RefTableName>regions</RefTableName>
       <RefColNames>id</RefColNames>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="778" parent="335" name="id">
+    <column id="780" parent="335" name="id">
       <Position>1</Position>
       <DataType>int(10) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="779" parent="335" name="name">
+    <column id="781" parent="335" name="name">
       <Position>2</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="780" parent="335" name="id">
+    <index id="782" parent="335" name="id">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="781" parent="335" name="PRIMARY">
+    <key id="783" parent="335" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="782" parent="335" name="id">
+    <key id="784" parent="335" name="id">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>id</UnderlyingIndexName>
     </key>
-    <column id="783" parent="336" name="id">
+    <column id="785" parent="336" name="id">
       <Position>1</Position>
       <DataType>int(10) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="784" parent="336" name="name">
+    <column id="786" parent="336" name="name">
       <Position>2</Position>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="785" parent="336" name="id">
+    <index id="787" parent="336" name="id">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="786" parent="336" name="PRIMARY">
+    <key id="788" parent="336" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="787" parent="336" name="id">
+    <key id="789" parent="336" name="id">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>id</UnderlyingIndexName>
     </key>
-    <column id="788" parent="337" name="id">
+    <column id="790" parent="337" name="id">
       <Position>1</Position>
       <DataType>int(10) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="789" parent="337" name="name">
+    <column id="791" parent="337" name="name">
       <Position>2</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="790" parent="337" name="id">
+    <index id="792" parent="337" name="id">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="791" parent="337" name="PRIMARY">
+    <key id="793" parent="337" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="792" parent="337" name="id">
+    <key id="794" parent="337" name="id">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>id</UnderlyingIndexName>
     </key>
-    <column id="793" parent="338" name="id">
+    <column id="795" parent="338" name="id">
       <Position>1</Position>
       <DataType>int(10) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="794" parent="338" name="name">
+    <column id="796" parent="338" name="name">
       <Position>2</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="795" parent="338" name="PRIMARY">
+    <key id="797" parent="338" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="796" parent="339" name="id">
+    <column id="798" parent="339" name="id">
       <Position>1</Position>
       <DataType>int(10) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="797" parent="339" name="name">
+    <column id="799" parent="339" name="name">
       <Position>2</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="798" parent="339" name="id">
+    <index id="800" parent="339" name="id">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="799" parent="339" name="PRIMARY">
+    <key id="801" parent="339" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="800" parent="339" name="id">
+    <key id="802" parent="339" name="id">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>id</UnderlyingIndexName>
     </key>

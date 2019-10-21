@@ -79,12 +79,13 @@ CREATE TABLE actions_employees
     id_type_action   INT UNSIGNED NOT NULL,
     id_result_action INT UNSIGNED NOT NULL,
     date_action      DATETIME DEFAULT CURRENT_TIMESTAMP,
-    id_promise       BIGINT UNSIGNED DEFAULT NULL,
+    promise          BOOLEAN,
     id_contact       INT UNSIGNED NOT NULL
 );
 
 
-------------------------------------------------------------------------------------------------------------------------
+
+    ------------------------------------------------------------------------------------------------------------------------
 --таблица типа контакта(на какой номер звонил или на какой адрес выезжал)
 
 CREATE TABLE contacts

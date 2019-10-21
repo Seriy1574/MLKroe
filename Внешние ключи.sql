@@ -194,3 +194,9 @@ ALTER TABLE addresses_clients
         FOREIGN KEY (id_region) REFERENCES regions(id)
             ON DELETE CASCADE;
 
+
+ALTER TABLE promises
+    ADD CONSTRAINT id_prom_act_fk
+        FOREIGN KEY (id_promise) REFERENCES actions_employees(id)
+            ON DELETE CASCADE;
+
