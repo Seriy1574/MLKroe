@@ -129,5 +129,17 @@ INSERT  INTO banks (id, name) VALUE
 (default, 'Восточный'),
 (default, 'Росбанк');
 
-yt gjkexftncz yjhvfkbpjdfnm
+--адреса клиентов все вставлять не стал
+
+INSERT INTO `addresses_clients` VALUES
+
+('2532','791','1','0','9','5332 Ullrich Canyon Apt. 276\nEast Terrell, IA 68438'),
+('2533','237','4','0','13','3532 Hazle Centers Suite 735\nMerrittfort, ND 57869-3179'),
+('2534','717','3','1','12','876 Denesik Ramp Apt. 580\nNorth Cassandra, WV 23455'),
+('2535','660','3','0','10','64654 Keeling Greens Apt. 188\nMitchellville, DE 55454'),
+('2536','762','2','1','18','9069 Idella Neck Suite 769\nMonahanton, KY 89482'),
+('2537','809','1','1','19','708 Luettgen Squares Suite 220\nSouth Hazelville, AZ 72737'),
+('2538','259','4','0','19','50852 Brandy Squares Apt. 453\nArchstad, AZ 24601-2226'),
+('2539','746','1','0','9','9170 Haley Heights Apt. 604\nSouth Ralphchester, DC 74018');
+
 

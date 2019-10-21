@@ -158,4 +158,8 @@ alter table profiles_employeers
 
 
 
+ALTER TABLE addresses_clients
+    ADD CONSTRAINT id_reg_reg_fk
+        FOREIGN KEY (id_region) REFERENCES regions(id)
+            ON DELETE CASCADE;
 
