@@ -39,3 +39,36 @@ SELECT * FROM accounts WHERE id = 1;
 |  1 | 5563151554477328 |        80 |               1 |     702036 | 1975-07-17 00:00:00 |          18 | 861 |       7 |    96550 |
 +----+------------------+-----------+-----------------+------------+---------------------+-------------+-----+---------+----------+
 
+
+
+
+Хотел сделать триггер такой, но он не работет м
+
+/*DROP TRIGGER IF EXISTS cl_empl
+DELIMITER //
+CREATE TRIGGER cl_empl AFTER INSERT ON clients
+    FOR EACH ROW
+BEGIN
+    IF NEW.id IS NOT NULL then
+
+        UPDATE clients_employees as dest,
+            (SELECT pe.id AS id_employee, ac.id_client
+             FROM profiles_employeers pe
+                      JOIN (SELECT DISTINCT id_client, id_type, actual, id_region
+                            FROM addresses_clients) ac
+                           ON ac.id_region = pe.id_region
+                               AND ac.id_type= 1
+                               AND ac.actual = 1
+                      JOIN
+                  (SELECT acc.id_client, SUM(sum_dept) all_debt FROM accounts acc
+                   GROUP BY acc.id_client
+                   HAVING all_debt > 5000) sd
+                  ON sd.id_client = ac.id_client
+             WHERE ac.id_client = NEW.id ) AS sqr
+        SET dest.id_employee = sqr.id_employee, dest.id_client = sqr.id_client
+        WHERE id_employee = NEW.id;
+    END IF ;
+END;//
+
+DELIMITER ;*/
+
