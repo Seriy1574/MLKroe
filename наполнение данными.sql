@@ -239,3 +239,5 @@ VALUES (default, 'ЕКБ1',8),
        (default, 'Коп4',12),
        (default, 'Злт3',13),
        (default, 'Злт4',13);
+
+

@@ -282,3 +282,5 @@ CREATE TABLE clients_enployees
     ds          DATETIME DEFAULT CURRENT_TIMESTAMP,
     df          DATETIME DEFAULT NULL
 );
+
+
