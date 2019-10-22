@@ -241,15 +241,21 @@ VALUES (default, 'ЕКБ1',8),
        (default, 'Злт4',13);
 
 
-SELECT DATE_FORMAT(p.date_payment,'%d.%m'),pe.first_name,pe.last_name, sum(p.sum_payment)
-FROM payments p
-         JOIN accounts a
-              ON p.id_account = a.id
-         JOIN clients c
-              ON a.id_client = c.id
-         JOIN clients_employees ce
-              ON c.id = ce.id_client
-         JOIN profiles_employeers pe
-              ON ce.id_employee = pe.id
-GROUP BY
-    DATE_FORMAT(p.date_payment,'%d.%m'),pe.first_name,pe.last_name;
+
+
+
+INSERT INTO clients_employees
+
+    (SELECT pe.id AS id_employee, ac.id_client
+     FROM profiles_employeers pe
+              JOIN (
+         SELECT DISTINCT id_client, id_type, actual, id_region
+         FROM addresses_clients) ac
+                   ON ac.id_region = pe.id_region
+                       AND ac.id_type= 1
+                       AND ac.actual = 1
+              JOIN
+          (SELECT acc.id_client, SUM(sum_dept) all_debt FROM accounts acc
+           GROUP BY acc.id_client
+           HAVING all_debt > 5000) sd
+          ON sd.id_client = ac.id_client);
