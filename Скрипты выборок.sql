@@ -7,5 +7,5 @@ SELECT pe.id, ac.id_client FROM profiles_employeers pe
     FROM addresses_clients) ac
                                          ON ac.id_region = pe.id_region
                                              AND ac.id_type= 1
-                                             AND ac.actual = 1
+                                             AND ac.actual = 1;
 
