@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20dfd516-2471-4b1c-becf-430802f5d46f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Скрипты выборок.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Скрипты выборок.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/наполнение данными.sql" beforeDir="false" afterPath="$PROJECT_DIR$/наполнение данными.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/процедуры, функции, триггеры.sql" beforeDir="false" afterPath="$PROJECT_DIR$/процедуры, функции, триггеры.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/создание таблиц.sql" beforeDir="false" afterPath="$PROJECT_DIR$/создание таблиц.sql" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -114,8 +111,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/7f600ea1-097b-4d11-9998-a836639893f6/console_2.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="46" selection-start-line="46" selection-end-line="51" selection-end-column="73" />
+            <state relative-caret-position="401">
+              <caret line="73" selection-start-line="73" selection-end-line="84" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -123,8 +120,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Скрипты выборок.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="44" column="7" selection-start-line="44" selection-start-column="7" selection-end-line="44" selection-end-column="7" />
+            <state relative-caret-position="426">
+              <caret line="63" selection-start-line="63" selection-end-line="74" selection-end-column="72" />
             </state>
           </provider>
         </entry>
@@ -132,8 +129,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/наполнение данными.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="193" column="96" lean-forward="true" selection-start-line="193" selection-start-column="96" selection-end-line="193" selection-end-column="96" />
+            <state relative-caret-position="681">
+              <caret line="254" column="67" selection-start-line="254" selection-start-column="67" selection-end-line="254" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -150,7 +147,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/процедуры, функции, триггеры.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
+            <state relative-caret-position="-16">
               <caret line="4" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
@@ -179,10 +176,10 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/Внешние ключи.sql" />
         <option value="$PROJECT_DIR$/создание таблиц.sql" />
-        <option value="$PROJECT_DIR$/наполнение данными.sql" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/7f600ea1-097b-4d11-9998-a836639893f6/console_2.sql" />
         <option value="$PROJECT_DIR$/Скрипты выборок.sql" />
         <option value="$PROJECT_DIR$/процедуры, функции, триггеры.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/7f600ea1-097b-4d11-9998-a836639893f6/console_2.sql" />
+        <option value="$PROJECT_DIR$/наполнение данными.sql" />
       </list>
     </option>
   </component>
@@ -255,12 +252,12 @@
       <option name="presentableId" value="Default" />
       <updated>1571318202206</updated>
       <workItem from="1571318222863" duration="8178000" />
-      <workItem from="1571637933261" duration="33062000" />
+      <workItem from="1571637933261" duration="33417000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93600000" />
+    <option name="totallyTimeSpent" value="93955000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
@@ -369,13 +366,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Внешние ключи.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="197" selection-start-line="197" selection-end-line="200" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="uml://DATABASE/7f600ea1-097b-4d11-9998-a836639893f6.SCHEMA:mobile_collection">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -413,24 +403,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/7f600ea1-097b-4d11-9998-a836639893f6/console_2.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="46" selection-start-line="46" selection-end-line="51" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://7f600ea1-097b-4d11-9998-a836639893f6/schema/mobile_collection/table/phones_clients.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="64" selection-start-line="14" selection-start-column="64" selection-end-line="14" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/процедуры, функции, триггеры.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
@@ -441,17 +417,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Внешние ключи.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="197" selection-start-line="197" selection-end-line="200" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/процедуры, функции, триггеры.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-16">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Скрипты выборок.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="44" column="7" selection-start-line="44" selection-start-column="7" selection-end-line="44" selection-end-column="7" />
+        <state relative-caret-position="426">
+          <caret line="63" selection-start-line="63" selection-end-line="74" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/7f600ea1-097b-4d11-9998-a836639893f6/console_2.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="73" selection-start-line="73" selection-end-line="84" selection-end-column="67" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/наполнение данными.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="193" column="96" lean-forward="true" selection-start-line="193" selection-start-column="96" selection-end-line="193" selection-end-column="96" />
+        <state relative-caret-position="681">
+          <caret line="254" column="67" selection-start-line="254" selection-start-column="67" selection-end-line="254" selection-end-column="67" />
         </state>
       </provider>
     </entry>
